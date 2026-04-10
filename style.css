@@ -343,7 +343,7 @@ section { scroll-margin-top: calc(var(--nav-h) * 0.6); }
 }
 .contact-links a:hover .c-icon { background: var(--ink); color: var(--surface); }
 
-@media (max-width: 1000px) {
+@media (max-width: 1030px) {
   .hero-name-wrap .main-text { transition: none; animation: none; }
   .hero-name-wrap:hover .main-text { letter-spacing: -0.02em; }
 }
@@ -352,7 +352,7 @@ section { scroll-margin-top: calc(var(--nav-h) * 0.6); }
   section { scroll-margin-top: calc(var(--nav-h) * 0.85); }
   .nav-links { gap: 1.25rem; }
   .projects-grid { grid-template-columns: 1fr; }
-  .hero-name { font-size: clamp(3rem, 20vw, 8rem); }
+  .hero-name { font-size: clamp(3rem, 20vw, 8.5rem); }
   
   .hero-name .line { display: inline; padding-bottom: 0; overflow: visible; }
   .hero-name .line:nth-child(2)::before { content: ' '; }
@@ -361,15 +361,20 @@ section { scroll-margin-top: calc(var(--nav-h) * 0.6); }
   .hero-inner { display: flex; flex-direction: column; gap: 1.25rem; padding-top: calc(var(--nav-h) + 0.5rem); padding-bottom: 1rem; }
   .hero-left       { order: 1; display: contents; }
   .hero-name       { order: 1; }
-  .hero-photo      { order: 2; width: 100%; max-width: 100%; aspect-ratio: 2/2; margin-top: 1rem; min-height: unset; }
-  .hero-descriptor { order: 3; }
-  .hero-desc-text  { max-width: 100%; }
+  .hero-photo      { order: 2; width: 100%; max-width: 90%; aspect-ratio: 2/2.1; margin-top: 1rem; min-height: unset; }
+  .hero-descriptor { order: 3; margin-top: 0.5rem; align-self: center; padding-left: 1rem; padding-right: 1rem;}
+  .hero-desc-text { max-width: 90%; margin: 0 auto; }
 
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-photo { max-width: 360px; margin: 0 auto; }
 }
 
-/* ── PROJECT PAGES (project-1.html, project-2.html, etc.) ──────────── */
+@media (max-width: 400px) {
+  .hero-photo      { aspect-ratio: 2/2; margin-top: 0.25rem; }
+  .hero-descriptor {  margin-top: 0rem;}
+}
+
+/* ── PROJECT PAGES ──────────── */
 
 /* Content container */
 .page { max-width: var(--max); margin: 0 auto; padding: calc(var(--nav-h) + 4rem) var(--gutter) 6rem; }
