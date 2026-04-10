@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- project-1.html - VEX Robotics-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="site.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <title>VEX Robotics</title>
+  <link rel="icon" type="image/webp" href="images/icon.webp">
+  <link rel="preload" href="images/project-1.webp" as="VEX Robotics hero image">
+</head>
+<body class="project-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Ryan Hay</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about"    onclick="sessionStorage.setItem('scrollTo','about')">About</a></li>
+      <li><a href="index.html#projects" onclick="sessionStorage.setItem('scrollTo','projects')">Projects</a></li>
+      <li><a href="index.html#contact"  onclick="sessionStorage.setItem('scrollTo','contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Info left, image right -->
+    <div class="proj-header-row">
+
+      <!-- Left: category, title, tagline pushed to top / meta pinned to bottom -->
+      <div class="proj-header-left">
+        <div>
+          <p class="proj-cat">Competitive Robotics</p>
+          <h1 class="proj-title">VEX Robotics</h1>
+          <p class="proj-tagline">Showcasing my work on the VEX robotics team in high school.</p>
+        </div>
+        <div class="proj-meta">
+          <div><p class="meta-label">Year</p>   <p class="meta-value">2021 - 2024</p></div>
+          <div><p class="meta-label">Role</p>   <p class="meta-value">Team Captain, Chief Builder</p></div>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="proj-hero-side">
+        <img src="images/project-1.webp" alt="VEX Robotics">
+      </div>
+
+    </div>
+
+    <!-- Overview left, tools right -->
+    <div class="proj-body">
+
+      <div class="proj-desc">
+        <p class="content-label" style="color: var(--teal); font-size: 0.85rem;">Overview</p>
+        <p>
+          During high school, I participated in VEX Robotics, designing and building competition robots for three seasons. Each year presented unique challenges, 
+          requiring mechanical design, programming, and teamwork. Competitions included autonomous and driver-controlled periods, with awards for engineering excellence assessed by interviews with judges, engineering journal quality, and match performance.
+        </p>
+        <p>
+          In my sophomore year, for the Tipping Point season, I contributed to the robot's design by creating a mechanism that used a linear actuator on the back of the robot to deposit rings into mobile goals,
+          scoring extra points during the autonomous period. As the linear actuator went down to pick up a mobile goal, pre-set rings on the robot automatically deployed into the mobile goal. See <span class="fig-ref" data-fig="1">Fig. 1.</span> for a side view of the robot.
+        </p>
+        <p>
+          As chief builder in my junior year for the Spin Up season, I designed an intake mechanism using flex wheels and conveyor belts to pick up discs and deposit them in the shooting mechanism.
+          I also designed a trigger system for rapid-fire shooting. See <span class="fig-ref" data-fig="2">Fig. 2.</span> for the first iteration and <span class="fig-ref" data-fig="3">Fig. 3.</span> for a video demo. 
+          After the first competition, we refined the design to allow same-side intake and shooting. By replacing the conveyor belt with flex wheels, the discs could be drawn in at a steeper angle and at a faster rate. 
+          See <span class="fig-ref" data-fig="4">Fig. 4.</span> for an in-progress photo of the improved intake. Additionally, we added an expansion mechanism to score endgame points. I designed the deployment system using a
+          motor to release the expansion mechanism and a lever tensioned with rubber bands to deploy it on the field. See <span class="fig-ref" data-fig="5">Fig. 5.</span> for the deploying mechanism and 
+          <span class="fig-ref" data-fig="6">Fig. 6.</span> for a photo of our robot after expanding at the end of a match.
+        </p>
+        <p>
+          In my senior year, I was elected team captain for the Over Under season. I led weekly meetings, managed the engineering journal, and designed a custom 4-motor 
+          geared drivetrain and a pneumatic elevation system. See <span class="fig-ref" data-fig="7">Fig. 7.</span> for the drivetrain and 
+          <span class="fig-ref" data-fig="8">Fig. 8.</span> for the initial version of the elevation mechanism. We won the Tournament Champion, Excellence Award, and Judges Award, advancing us to the state competition.
+          See <span class="fig-ref" data-fig="9">Fig. 9.</span> for the completed robot, in which I also assisted in the pneumatic front flaps and <span class="fig-ref" data-fig="10">Fig. 10.</span> for our victory.
+        </p>
+      </div>
+
+      <!-- Tech & Tools -->
+      <div>
+        <div class="sidebar-block">
+          <p class="content-label">Tech &amp; Tools</p>
+          <div class="tag-list">
+            <span class="tag">Leadership</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Mechanical Design</span>
+            <span class="tag">Pneumatics</span>
+            <span class="tag">Drivetrain Design</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Interactive Gallery -->
+    <div class="proj-gallery">
+      <p class="content-label">Gallery</p>
+
+      <div class="gallery-main" style="position:relative;">
+        <img id="galleryMainImg" src="images/project1/tippingpoint.webp" alt="Gallery Main.">
+        <iframe id="galleryMainVideo" src="" title="" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          style="display:none; position:absolute; inset:0; width:100%; height:100%; border:none;">
+        </iframe>
+      </div>
+      <p class="media-caption" id="galleryCaption"><b>Fig. 1.</b> A side view of the Tipping Point robot, the linear-actuator mechanism is pictured on the right.</p>
+
+      <div class="gallery-thumbs-wrap">
+        <div class="gallery-thumbs">
+          <button class="gallery-thumb active" data-src="images/project1/tippingpoint.webp" data-caption="<b>Fig. 1.</b> A side view of the Tipping Point robot, the linear-actuator mechanism is pictured on the right.">
+            <img src="images/project1/tippingpoint.webp" alt="A side-view photo of the robot for the Tipping Point season">
+          </button>
+          <button class="gallery-thumb" data-src="images/project1/intakev1.webp" data-caption="<b>Fig. 2.</b> A photo of the first intake mechanism for the Spin Up season using flex wheels and a conveyor belt.">
+             <img src="images/project1/intakev1.webp" alt="A photo of the first intake design for the Tipping Point season">
+          </button>
+          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/ecFd5s9-Jhs?si=4pAqmo8yB_8CTsoq" data-caption="<b>Fig. 3.</b> A demo video of the intake and shooting mechanism on the Spin Up robot.">
+            <img src="images/project1/videothumb.webp" alt="A video of the robot's intake and shooting mechanism on the Spin Up season in action, demonstrating the conveyor belt and flex wheel intake and the trigger shooting mechanism">
+          </button>
+          <button class="gallery-thumb" data-src="images/project1/intakev2.webp" data-caption="<b>Fig. 4.</b> A photo of the improved intake design for same-side intake and shooting on the Spin Up robot.">
+            <img src="images/project1/intakev2.webp" alt="A photo of the second intake design on the Spin Up robot, using flex wheels without a conveyor belt for faster intake at a steeper angle">
+          </button>
+          <button class="gallery-thumb" data-src="images/project1/expansion.webp" data-caption="<b>Fig. 5.</b> A photo of the deployment mechanism for endgame points on the back of the Spin Up robot (the expansion mechanism is not pictured.)">
+            <img src="images/project1/expansion.webp" alt="A photo of the deployment mechanism on the back of the robot on the Spin Up season, using a motor to release the expansion mechanism and a lever tensioned with rubberbands to deploy it on the field">
+          </button>
+          <button class="gallery-thumb" data-src="images/project1/expansioninaction.webp" data-caption="<b>Fig. 6.</b> A photo of the Spin Up robot after deploying the expansion mechanism during an endgame; every tile that our robot touches (including the strings) is worth a point.">
+            <img src="images/project1/expansioninaction.webp" alt="A photo of the robot with the expansion mechanism deployed during endgame for the Spin Up season, showing the strings and tiles that the robot is touching to score points">
+          </button>
+          <button class="gallery-thumb" data-src="images/project1/drivetrain.webp" data-caption="<b>Fig. 7.</b> A photo of the 4-motor drivetrain I designed for the Over Under season, geared for more torque, enabling our robot to push other robots while maintaining fast speeds.">
+            <img src="images/project1/drivetrain.webp" alt="A photo of the custom 4-motor geared drivetrain that I designed for the Over Under season">
+          </button>
+          <button class="gallery-thumb" data-src="images/project1/climbing.webp" data-caption="<b>Fig. 8.</b> A photo of the initial elevation system using pneumatic pistons and rubber bands to lift the Over Under robot.">
+            <img src="images/project1/climbing.webp" alt="A photo of the initial elevation system on the Over Under robot using pneumatic pistons and rubber bands">
+          </button>
+          <button class="gallery-thumb" data-src="images/project-1.webp" data-caption="<b>Fig. 9.</b> A photo of the completed Over Under robot, utilizing 2 pneumatic cylinders, 4 pistons for elevation and two for front flaps.">
+            <img src="images/project-1.webp" alt="A photo of the completed Over Under robot with pneumatic systems">
+          </button>
+          <button class="gallery-thumb" data-src="images/project1/win.webp" data-caption="<b>Fig. 10.</b> A photo of the victory that took us (1221K) to state in the Over Under season and won us Tournament Champion, Excellence Award, and Judges Award.">
+            <img src="images/project1/win.webp" alt="A photo of the team winning the competition in the Over Under season, which took us to state and won us Tournament Champion, Excellence Award, and Judges Award">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <a href="index.html" id="backBtn" class="btn-back" style="margin-top: 2rem;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 7H2M6 3L2 7l4 4"/>
+      </svg>
+      Back to all projects
+    </a>
+
+  </div>
+
+  <!-- Lightbox -->
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Ryan Hay &emsp; Latest Update: <span id="lastUpdated"></span></p>
+    <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode"></button>
+  </footer>
+
+</body>
+</html>

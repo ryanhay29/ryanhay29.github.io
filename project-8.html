@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- project-8.html - NASA Lunabotics -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="site.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <title>NASA Lunabotics</title>
+  <link rel="icon" type="image/webp" href="images/icon.webp">
+  <link rel="preload" href="images/project-8.webp" as="Bucket hero image">
+</head>
+<body class="project-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Ryan Hay</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about"    onclick="sessionStorage.setItem('scrollTo','about')">About</a></li>
+      <li><a href="index.html#projects" onclick="sessionStorage.setItem('scrollTo','projects')">Projects</a></li>
+      <li><a href="index.html#contact"  onclick="sessionStorage.setItem('scrollTo','contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Info left, image right -->
+    <div class="proj-header-row">
+
+      <!-- Left: category, title, tagline pushed to top / meta pinned to bottom -->
+      <div class="proj-header-left">
+        <div>
+          <p class="proj-cat">Structural Design &amp; FEA</p>
+          <h1 class="proj-title">NASA Lunabotics</h1>
+          <p class="proj-tagline">Designed and validated a front end loader bucket for excavation.</p>
+        </div>
+        <div class="proj-meta">
+          <div><p class="meta-label">Year</p>   <p class="meta-value">2025 – 2026</p></div>
+          <div><p class="meta-label">Status</p> <p class="meta-value">Ongoing</p></div>
+          <div><p class="meta-label">Role</p>   <p class="meta-value">Excavation Bucket Engineer</p></div>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="proj-hero-side">
+        <img src="images/project-8.webp" alt="NASA Lunabotics">
+      </div>
+
+    </div>
+
+    <!-- Overview left, tools right -->
+    <div class="proj-body">
+
+      <div class="proj-desc">
+        <p class="content-label" style="color: var(--teal); font-size: 0.85rem;">Overview</p>
+        <p>
+          NASA Lunabotics is an annual competition hosted by NASA in which teams design and build rovers to excavate simulated lunar regolith and deposit it to construct berms. 
+          As a member of Northwestern's team, I am responsible for designing the front-end loader bucket that will attach to the excavation frame. This involved creating multiple 
+          design iterations using CAD in Onshape, performing finite element analysis (FEA) in SolidWorks to validate structural integrity under expected loads, and selecting appropriate materials and 
+          fasteners for manufacturing. Throughout the process, I presented at design reviews to ensure the bucket's performance and integration were successful. In May 2026, we will travel to NASA's Kennedy Space Center to compete.
+        </p>
+        <p>
+          I began by creating concept sketches and CAD models of the bucket, exploring different geometries and configurations. I 3D-printed miniature prototypes to evaluate each design (see <span class="fig-ref" data-fig="1">Fig. 1.</span>). 
+          After selecting a design and adapting it for bent sheet-metal manufacturing, I modeled it in Onshape using parametric variables to efficiently iterate on dimensions ranging from overall length, 
+          width, and height to bolt-hole sizes and flange lengths. I used Onshape's sheet metal tools and sourced fasteners and pivot mounts from McMaster-Carr. 
+          See <span class="fig-ref" data-fig="2">Fig. 2.</span> and <span class="fig-ref" data-fig="3">Fig. 3.</span> for CAD views of the 
+          design. To optimize strength, I incorporated ribs and a reinforced backplate at the linear actuator attachment point. While designing, I communicated with the other members of the excavation team 
+          to ensure compatibility with the frame and mount positions. See <span class="fig-ref" data-fig="4">Fig. 4.</span> and <span class="fig-ref" data-fig="5">Fig. 5.</span> for CAD views of the 
+          bucket integrated into the full rover assembly.
+        </p>
+        <p>
+          I performed FEA to validate the design under several loading conditions including maximum regolith capacity and peak forces on the front edge during ground penetration. 
+          See <span class="fig-ref" data-fig="6">Fig. 6.</span> and <span class="fig-ref" data-fig="7">Fig. 7.</span> for FEA results showing displacement and factor of safety, respectively. 
+          I coordinated with the excavation team during their frame FEA to cross-check results and confirm the frame could handle the forces transmitted from the bucket.
+        </p>
+        <p>
+          We outsourced sheet metal fabrication to SendCutSend to ensure the bends were precise before assembling the bucket in-house.
+          See <span class="fig-ref" data-fig="8">Fig. 8.</span> and <span class="fig-ref" data-fig="9">Fig. 9.</span> for photos of the assembled bucket, and <span class="fig-ref" data-fig="10">Fig. 10.</span> 
+          for a photo of the bucket next to the rover.
+        </p>
+        <p>
+          Aside from the bucket, I've also assisted with machining parts for the rover chassis using the horizontal bandsaw and milling machine for the aluminum frame and the lathe for making spacers for the pivot mounts.
+          Once the excavation frame is fully assembled, the bucket will be mounted and we will begin testing and record a proof of life video.
+        </p>
+      </div>
+
+      <!-- Tech & Tools -->
+      <div>
+        <div class="sidebar-block">
+          <p class="content-label">Tech &amp; Tools</p>
+          <div class="tag-list">
+            <span class="tag">Onshape</span>
+            <span class="tag">SolidWorks FEA</span>
+            <span class="tag">3D Printing</span>
+            <span class="tag">Material &amp; fastener selection</span>
+            <span class="tag">Design Reviews</span>
+            <span class="tag">Sheet metal fabrication</span>
+            <span class="tag">Horizontal Bandsaw</span>
+            <span class="tag">Milling Machine</span>
+            <span class="tag">Lathe</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Interactive Gallery -->
+    <div class="proj-gallery">
+      <p class="content-label">Gallery</p>
+
+      <div class="gallery-main" style="position:relative;">
+        <img id="galleryMainImg" src="images/project8/prototypes.webp" alt="Gallery Main">
+        <iframe id="galleryMainVideo" src="" title="" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          style="display:none; position:absolute; inset:0; width:100%; height:100%; border:none;">
+        </iframe>
+      </div>
+      <p class="media-caption" id="galleryCaption"><b>Fig. 1.</b> A photo of the 3D printed prototypes to test different bucket geometries.</p>
+
+      <div class="gallery-thumbs-wrap">
+        <div class="gallery-thumbs">
+          <button class="gallery-thumb active" data-src="images/project8/prototypes.webp" data-caption="<b>Fig. 1.</b> A photo of the 3D printed prototypes to test different bucket geometries.">
+            <img src="images/project8/prototypes.webp" alt="Photo of 3D printed prototypes of bucket geometry">
+          </button>
+          <button class="gallery-thumb" data-src="images/project8/onshapebucket.webp" data-caption="<b>Fig. 2.</b> A CAD view of the bucket assembly, showing the bent sheet metal design and fastener placements.">
+            <img src="images/project8/onshapebucket.webp" alt="CAD view of the bucket assembly">
+          </button>
+          <button class="gallery-thumb" data-src="images/project8/onshapeback.webp" data-caption="<b>Fig. 3.</b> A CAD view of the back of the bucket with the pivot mounts.">
+            <img src="images/project8/onshapeback.webp" alt="CAD view of the back of the bucket">
+          </button>
+          <button class="gallery-thumb" data-src="images/project8/fullassembly.webp" data-caption="<b>Fig. 4.</b> A CAD view of the full rover assembly.">
+            <img src="images/project8/fullassembly.webp" alt="CAD isometric view of the full rover assembly">
+          </button>
+          <button class="gallery-thumb" data-src="images/project8/sidefullassembly.webp" data-caption="<b>Fig. 5.</b> A CAD side view of the full rover assembly.">
+            <img src="images/project8/sidefullassembly.webp" alt="CAD side view of the full rover assembly">
+          </button>
+          <button class="gallery-thumb" data-src="images/project8/displacementfea.webp" data-caption="<b>Fig. 6.</b> A visualization of the displacement results from the SolidWorks FEA analysis for the case of carrying maximum capacity regolith.">
+            <img src="images/project8/displacementfea.webp" alt="Displacement SolidWorks FEA for carrying maximum capacity of regolith">
+          </button>
+          <button class="gallery-thumb" data-src="images/project8/fosfea.webp" data-caption="<b>Fig. 7.</b> A visualization of the factor of safety results from the SolidWorks FEA analysis for the case of digging into the ground.">
+            <img src="images/project8/fosfea.webp" alt="FOS SolidWorks FEA for digging into the ground">
+          </button>
+          <button class="gallery-thumb" data-src="images/project8/realfrontofbucket.webp" data-caption="<b>Fig. 8.</b> A photo of the front of the assembled bucket.">
+            <img src="images/project8/realfrontofbucket.webp" alt="Photo of the front of the assembled bucket">
+          </button>
+          <button class="gallery-thumb" data-src="images/project8/realbackofbucket.webp" data-caption="<b>Fig. 9.</b> A photo of the back of the assembled bucket.">
+            <img src="images/project8/realbackofbucket.webp" alt="Photo of the back of the assembled bucket">
+          </button>
+          <button class="gallery-thumb" data-src="images/project8/roverassembly.webp" data-caption="<b>Fig. 10.</b> A photo of the assembled bucket and rover chassis.">
+            <img src="images/project8/roverassembly.webp" alt="Photo of the bucket next to the rover chassis">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <a href="index.html" id="backBtn" class="btn-back" style="margin-top: 2rem;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 7H2M6 3L2 7l4 4"/>
+      </svg>
+      Back to all projects
+    </a>
+
+  </div>
+
+  <!-- Lightbox -->
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Ryan Hay &emsp; Latest Update: <span id="lastUpdated"></span></p>
+    <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode"></button>
+  </footer>
+
+</body>
+</html>

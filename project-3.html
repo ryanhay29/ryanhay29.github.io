@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- project-3.html - The Fench -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="site.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <title>The Fench</title>
+  <link rel="icon" type="image/webp" href="images/icon.webp">
+  <link rel="preload" href="images/project-3.webp" as="The Fench hero image">
+</head>
+<body class="project-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Ryan Hay</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about"    onclick="sessionStorage.setItem('scrollTo','about')">About</a></li>
+      <li><a href="index.html#projects" onclick="sessionStorage.setItem('scrollTo','projects')">Projects</a></li>
+      <li><a href="index.html#contact"  onclick="sessionStorage.setItem('scrollTo','contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Info left, image right -->
+    <div class="proj-header-row">
+
+      <!-- Left: category, title, tagline pushed to top / meta pinned to bottom -->
+      <div class="proj-header-left">
+        <div>
+          <p class="proj-cat">Safety-Oriented Product Design</p>
+          <h1 class="proj-title">The Fench</h1>
+          <p class="proj-tagline">Designed a bench-fence hybrid to prevent child drowning.</p>
+        </div>
+        <div class="proj-meta">
+          <div><p class="meta-label">Year</p>   <p class="meta-value">2025</p></div>
+          <div><p class="meta-label">Status</p> <p class="meta-value">Complete</p></div>
+          <div><p class="meta-label">Class</p>   <p class="meta-value">Design Thinking & Communication</p></div>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="proj-hero-side">
+        <img src="images/project-3.webp" alt="The Fench">
+      </div>
+
+    </div>
+
+    <!-- Overview left, tools right -->
+    <div class="proj-body">
+
+      <div class="proj-desc">
+        <p class="content-label" style="color: var(--teal); font-size: 0.85rem;">Overview</p>
+        <p>
+          In the first quarter of Design Thinking & Communication (DTC), I worked with a team to design a portable pool barrier that prevents children from entering pool areas unsupervised. 
+          The problem was given to us by our client, Dr. Jonathan Midgett, the Consumer Ombudsman at the U.S. Consumer Product Safety Commission (CPSC), because child drowning is a leading cause 
+          of death for children under 5.
+        </p>
+        <p>
+          We called our solution the fench, a combination of a bench and a fence with a storage compartment. I led the design process, using CAD to model the prototype in Onshape and generate a cutlist 
+          to be constructed from plywood and 2x4 lumber. See <span class="fig-ref" data-fig="1">Fig. 1.</span> for the CAD drawings of the fench in the open and closed position, and see <span class="fig-ref" data-fig="2">Fig. 2.</span> for the CAD view of the 2x4 frame.
+        </p>
+        <p>
+          In the shop, we built the frame with the chop saw and wood screws (see <span class="fig-ref" data-fig="3">Fig. 3.</span>), cut plywood panels on the vertical saw, and laser-cut handles and the storage opening (see <span class="fig-ref" data-fig="4">Fig. 4.</span>). 
+          We used wood glue and screws to attach the plywood to the frame (see <span class="fig-ref" data-fig="5">Fig. 5.</span>), and two locking hinges to allow the bench to transform into a fence. See <span class="fig-ref" data-fig="6">Fig. 6.</span> for the front and <span class="fig-ref" data-fig="7">Fig. 7.</span> 
+          for the back. Additionally, see <span class="fig-ref" data-fig="8">Fig. 8.</span> for a video demo of the transformation.
+        </p>
+        <p>
+          We finished the fench with stain for aesthetics and a curtain to deter animals (see <span class="fig-ref" data-fig="9">Fig. 9.</span>). The final deliverables included a written report including sections such as users and requirements, 
+          design concept rationale, and future development. Additionally, our team gave a presentation to our client and at the DTC expo. See <span class="fig-ref" data-fig="10">Fig. 10.</span> for a team photo with our instructors, and see <span class="fig-ref" data-fig="11">Fig. 11.</span>
+          for the poster I created.
+        </p>
+        <p>
+          Future developments include better waterproofing, wheels for easier deployment, and a clip-in safety gate so two units can form a scalable perimeter.
+        </p>
+      </div>
+
+      <!-- Tech & Tools -->
+      <div>
+        <div class="sidebar-block">
+          <p class="content-label">Tech &amp; Tools</p>
+          <div class="tag-list">
+            <span class="tag">Client Consulting</span>
+            <span class="tag">Field Research</span>
+            <span class="tag">Technical Drawing</span>
+            <span class="tag">Mockups &amp; Prototyping</span>
+            <span class="tag">Onshape</span>
+            <span class="tag">Woodworking</span>
+            <span class="tag">Laser Cutting</span>
+            <span class="tag">Design Review</span>
+            <span class="tag">Final Report</span>
+            <span class="tag">Presentation</span>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="sidebar-block">
+          <p class="content-label">Links</p>
+          <div class="proj-links">
+            <a href="https://drive.google.com/file/d/1Qwi49y16KdSjv66Nig6SQNQeMGiutJkH/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="proj-link">
+              <svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1.5"/><path d="M4 4h6M4 7h6M4 10h4"/></svg>
+              Final report (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+          
+
+    </div>
+
+    <!-- Interactive Gallery -->
+    <div class="proj-gallery">
+      <p class="content-label">Gallery</p>
+
+      <div class="gallery-main" style="position:relative;">
+        <img id="galleryMainImg" src="images/project3/onshapefench.webp" alt="Gallery Main.">
+        <iframe id="galleryMainVideo" src="" title="" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          style="display:none; position:absolute; inset:0; width:100%; height:100%; border:none;">
+        </iframe>
+      </div>
+      <p class="media-caption" id="galleryCaption"><b>Fig. 1.</b> A CAD view of the fench in the open (left) and closed position (right).</p>
+
+      <div class="gallery-thumbs-wrap">
+        <div class="gallery-thumbs">
+          <button class="gallery-thumb active" data-src="images/project3/onshapefench.webp" data-caption="<b>Fig. 1.</b> A CAD view of the fench in the open (left) and closed position (right).">
+            <img src="images/project3/onshapefench.webp" alt="A CAD drawing of the fench in its open and closed position">
+          </button>
+          <button class="gallery-thumb" data-src="images/project3/onshapeframe.webp" data-caption="<b>Fig. 2.</b> A CAD view of the 2x4 frame for the fench.">
+            <img src="images/project3/onshapeframe.webp" alt="A CAD view of the fench's 2 by 4 frame">
+          </button>
+          <button class="gallery-thumb" data-src="images/project3/2by4frame.webp" data-caption="<b>Fig. 3.</b> A photo of the assembled 2x4 frame before attaching the plywood.">
+            <img src="images/project3/2by4frame.webp" alt="A photo of the 2 by 4 frame">
+          </button>
+          <button class="gallery-thumb" data-src="images/project3/lasercutplywood.webp" data-caption="<b>Fig. 4.</b> A photo of the laser-cut plywood side panels ready for assembly.">
+            <img src="images/project3/lasercutplywood.webp" alt="A photo of the laser-cut plywood">
+          </button>
+          <button class="gallery-thumb" data-src="images/project3/attachingplywoodtoframe.webp" data-caption="<b>Fig. 5.</b> A photo of the plywood being attached to the frame with wood glue and screws.">
+            <img src="images/project3/attachingplywoodtoframe.webp" alt="A photo of the plywood being attached to the frame">
+          </button>
+          <button class="gallery-thumb" data-src="images/project3/unfinishedfront.webp" data-caption="<b>Fig. 6.</b> A front view of the unfinished prototype with hinges installed, this side would face away from the pool when in use.">
+            <img src="images/project3/unfinishedfront.webp" alt="A photo of the unfinished front of the fench">
+          </button>
+          <button class="gallery-thumb" data-src="images/project3/unfinishedback.webp" data-caption="<b>Fig. 7.</b> A back view of the unfinished prototype, this side would face the pool when in use.">
+            <img src="images/project3/unfinishedback.webp" alt="A photo of the unfinished back of the fench">
+          </button>
+          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/5rL4HXHDVGw?si=pcXZkZvi0JXtL_Tf" data-caption="<b>Fig. 8.</b> A video demo of the fench transforming into a fence with the use of the locking hinges.">
+            <img src="images/project3/videothumbnail.webp" alt="A video of the fench transforming into a fence">
+          </button>
+          <button class="gallery-thumb" data-src="images/project3/stainedfench.webp" data-caption="<b>Fig. 9.</b> A photo of the final prototype with a stained finish and curtain, the pillow is not pictured.">
+            <img src="images/project3/stainedfench.webp" alt="A photo of the stained fench">
+          </button>
+          <button class="gallery-thumb" data-src="images/project3/groupphotowithinstructors.webp" data-caption="<b>Fig. 10.</b> A team photo with course instructors at the DTC expo.">
+            <img src="images/project3/groupphotowithinstructors.webp" alt="A photo of my DTC group with instructors">
+          </button>
+          <button class="gallery-thumb" data-src="images/project3/fenchposter.webp" data-caption="<b>Fig. 11.</b> A photo of the final poster created to communicate the purpose and features of the fench.">
+            <img src="images/project3/fenchposter.webp" alt="A photo of the fench poster I designed">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <a href="index.html" id="backBtn" class="btn-back" style="margin-top: 2rem;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 7H2M6 3L2 7l4 4"/>
+      </svg>
+      Back to all projects
+    </a>
+
+  </div>
+
+  <!-- Lightbox -->
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Ryan Hay &emsp; Latest Update: <span id="lastUpdated"></span></p>
+    <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode"></button>
+  </footer>
+
+</body>
+</html>

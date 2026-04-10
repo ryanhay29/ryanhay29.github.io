@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- project-7.html - Guitar Robot -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="site.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Guitar Robot</title>
+  <link rel="icon" type="image/webp" href="images/icon.webp">
+  <link rel="preload" href="images/project-7.webp" as="Guitar Robot hero image">
+</head>
+<body class="project-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Ryan Hay</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about"    onclick="sessionStorage.setItem('scrollTo','about')">About</a></li>
+      <li><a href="index.html#projects" onclick="sessionStorage.setItem('scrollTo','projects')">Projects</a></li>
+      <li><a href="index.html#contact"  onclick="sessionStorage.setItem('scrollTo','contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Info left, image right -->
+    <div class="proj-header-row">
+
+      <!-- Left: category, title, tagline pushed to top / meta pinned to bottom -->
+      <div class="proj-header-left">
+        <div>
+          <p class="proj-cat">Mechatronics</p>
+          <h1 class="proj-title">Guitar Robot</h1>
+          <p class="proj-tagline">Designed a solenoid-driven mechanism to press frets on a guitar.</p>
+        </div>
+        <div class="proj-meta">
+          <div><p class="meta-label">Year</p>   <p class="meta-value">2025 – 2026</p></div>
+          <div><p class="meta-label">Status</p> <p class="meta-value">Ongoing</p></div>
+          <div><p class="meta-label">Role</p>   <p class="meta-value">Guitar Team Co-Lead</p></div>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="proj-hero-side">
+        <img src="images/project-7.webp" alt="Guitar Robot">
+      </div>
+
+    </div>
+
+    <!-- Overview left, tools right -->
+    <div class="proj-body">
+
+      <div class="proj-desc">
+        <p class="content-label" style="color: var(--teal); font-size: 0.85rem;">Overview</p>
+        <p>
+          In the Northwestern University Robotics Club (NURC), I am the co-lead of the guitar robot on the Robotic Band subteam, overseeing the mechanical design. 
+          I lead weekly meetings, track progress on both the guitar and drum robots, and facilitate communication between the two teams.
+        </p>
+        <p>
+          My primary contribution has been leading the design of the fret-pressing mechanism. After researching different actuation methods, I chose solenoids to 
+          press the strings from frets 1 to 12. Because the solenoids are too large to mount side by side on a single fret, I developed an arc layout for each fret array. 
+          I derived the geometry equations and used MATLAB to calculate the specific dimensions and mounting angles for each solenoid across each string and fret, then modeled the arrays 
+          in Onshape. I 3D printed a prototype of a single array, using a mix of real and printed solenoids, to validate the geometry, shown in <span class="fig-ref" data-fig="1">Fig. 1</span>. To test actuation, I built a 
+          capo-style prototype that clamps onto the guitar neck; see the demo video in <span class="fig-ref" data-fig="2">Fig. 2</span>.
+        </p>
+        <p>
+          With the concept validated, I designed the full mechanism in CAD using aluminum extrusions as a modular frame so the fret arrays can slide on and be repositioned. I carefully 
+          measured the fretboard to ensure accurate spacing between arrays. The full assembly is shown in <span class="fig-ref" data-fig="3">Fig. 3</span>. I also designed angled solenoid tips to match the mounting angle of each 
+          solenoid and optimize string contact, see <span class="fig-ref" data-fig="4">Fig. 4</span>.
+        </p>
+        <p>
+          Next, I laser cut the fret arrays from acrylic. Each array features slotted holes for solenoid mounting, side mounting points, and binary-encoded holes indicating the fret number. 
+          The full DXF layout is shown in <span class="fig-ref" data-fig="5">Fig. 5</span>, and the laser-cut acrylic arrays are pictured in <span class="fig-ref" data-fig="6">Fig. 6</span>. An exploded view of the 12th fret array is shown in <span class="fig-ref" data-fig="7">Fig. 7</span>. After cutting the 
+          aluminum extrusions to length, I assembled the frame with four fret arrays and the available solenoids, and resin-printed the angled tips. The prototype assembly is shown in <span class="fig-ref" data-fig="8">Fig. 8</span>.
+        </p>
+        <p>
+          Alongside the fret-pressing mechanism, I designed a new faceplate, replacing the pickguard, that serves as the shared mounting surface for both the fret-pressing mechanism and the 
+          string-plucking mechanism. The CAD design with fasteners is shown in <span class="fig-ref" data-fig="9">Fig. 9</span>. A first version was laser cut from acrylic to verify that the mounting holes align with the existing 
+          guitar screw holes. The acrylic faceplate with the fret-pressing assembly is shown in <span class="fig-ref" data-fig="10">Fig. 10</span>.
+        </p>
+        <p>
+          Currently, I am refining the fret-pressing mechanism, verifying dimensions against the guitar, and making adjustments to optimize string contact for sound quality. The full CAD drawing with dimensions for 
+          manufacturing is shown in <span class="fig-ref" data-fig="11">Fig. 11</span>.
+        </p>
+      </div>
+
+      <!-- Tech & Tools -->
+      <div>
+        <div class="sidebar-block">
+          <p class="content-label">Tech &amp; Tools</p>
+          <div class="tag-list">
+            <span class="tag">Onshape</span>
+            <span class="tag">3D Printing</span>
+            <span class="tag">SLA Resin Printing</span>
+            <span class="tag">Laser Cutting</span>
+            <span class="tag">Horizontal Band Saw</span>
+            <span class="tag">MATLAB</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Interactive Gallery -->
+    <div class="proj-gallery">
+      <p class="content-label">Gallery</p>
+
+      <div class="gallery-main" style="position:relative;">
+        <img id="galleryMainImg" src="images/project7/arrayprototype.webp" alt="Gallery Main.">
+        <iframe id="galleryMainVideo" src="" title="" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          style="display:none; position:absolute; inset:0; width:100%; height:100%; border:none;">
+        </iframe>
+      </div>
+      <p class="media-caption" id="galleryCaption"><b>Fig. 1.</b> A 3D printed prototype of a single fret array, using a mix of real and printed solenoids to validate the geometry and actuation.</p>
+
+      <div class="gallery-thumbs-wrap">
+        <div class="gallery-thumbs">
+          <button class="gallery-thumb active" data-src="images/project7/arrayprototype.webp" data-caption="<b>Fig. 1.</b> A 3D printed prototype of a single fret array, using a mix of real and printed solenoids to validate the geometry and actuation.">
+            <img src="images/project7/arrayprototype.webp" alt="Photo of 3D printed mockup for a single array of solenoids, using both real solenoids and 3D printed solenoids">
+          </button>
+          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/AM6Tc5tUmXA?si=ubRxMvUeEl4-mQfh" data-caption="<b>Fig. 2.</b> A demo video of the prototype clamped on the guitar neck, showing the solenoids pressing the strings and producing sound.">
+            <img src="images/project7/videothumbnailprototype.webp" alt="Video demo of the single array 3D printed prototype on a guitar neck">
+          </button>
+          <button class="gallery-thumb" data-src="images/project7/fretpressingmechanismCAD.webp" data-caption="<b>Fig. 3.</b> A CAD view of the fret-pressing mechanism assembly.">
+            <img src="images/project7/fretpressingmechanismCAD.webp" alt="CAD view of the fret pressing mechanism">
+          </button>
+          <button class="gallery-thumb" data-src="images/project7/tipsCAD.webp" data-caption="<b>Fig. 4.</b> A CAD view of the angled solenoid tips, designed to allow angled mounting while still pressing down on the strings.">
+            <img src="images/project7/tipsCAD.webp" alt="CAD view of the tips that attach to the solenoids and press the frets">  
+          </button>
+          <button class="gallery-thumb" data-src="images/project7/fretarraysdxf.webp" data-caption="<b>Fig. 5.</b> A screenshot of a laser-cut DXF file for the solenoid arrays, note the binary numbering.">
+            <img src="images/project7/fretarraysdxf.webp" alt="Screenshot of a laser-cut DXF file for the solenoid arrays">
+          </button>
+          <button class="gallery-thumb" data-src="images/project7/lasercutarrays.webp" data-caption="<b>Fig. 6.</b> A photo of the laser-cut acrylic solenoid arrays.">
+            <img src="images/project7/lasercutarrays.webp" alt="Photo of laser-cut acrylic solenoid arrays">
+          </button>
+          <button class="gallery-thumb" data-src="images/project7/explodedview.webp" data-caption="<b>Fig. 7.</b> An exploded CAD view of the 12th fret array assembly, showing all components and how they fit together.">
+            <img src="images/project7/explodedview.webp" alt="Exploded view CAD drawing of a single solenoid array assembly">
+          </button>
+          <button class="gallery-thumb" data-src="images/project7/assembledupperandlower.webp" data-caption="<b>Fig. 8.</b> A photo of the fret-pressing mechanism assembled with both upper and lower extrusions and four solenoid arrays installed.">
+            <img src="images/project7/assembledupperandlower.webp" alt="Photo of the full fret-pressing mechanism assembly with both upper and lower extrusions and 4 solenoid arrays installed">
+          </button>
+          <button class="gallery-thumb" data-src="images/project7/faceplateCAD.webp" data-caption="<b>Fig. 9.</b> A CAD view of the modified faceplate designed to mount both the fret-pressing and string-plucking mechanisms, showing the mounting holes and fasteners.">
+            <img src="images/project7/faceplateCAD.webp" alt="CAD view of the modified faceplate">
+          </button>
+          <button class="gallery-thumb" data-src="images/project-7.webp" data-caption="<b>Fig. 10.</b> A photo of the laser-cut acrylic faceplate laid out with the fret-pressing mechanism on the guitar body.">
+            <img src="images/project-7.webp" alt="Photo of the fret mechanism and guitar faceplate assemblies layed out on guitar body">
+          </button>
+          <button class="gallery-thumb" data-src="images/project7/FinalCADdrawing.webp" data-caption="<b>Fig. 11.</b> A CAD drawing of the full assembly with all components and fasteners.">
+            <img src="images/project7/FinalCADdrawing.webp" alt="Screenshot of the final CAD drawing with all components and dimensions for manufacturing the full assembly">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <a href="index.html" id="backBtn" class="btn-back" style="margin-top: 2rem;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 7H2M6 3L2 7l4 4"/>
+      </svg>
+      Back to all projects
+    </a>
+
+  </div>
+
+  <!-- Lightbox -->
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Ryan Hay &emsp; Latest Update: <span id="lastUpdated"></span></p>
+    <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode"></button>
+  </footer>
+
+</body>
+</html>

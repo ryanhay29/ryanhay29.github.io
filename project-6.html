@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- project-6.html - HAND ERC-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="site.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <title>HAND ERC</title>
+  <link rel="icon" type="image/webp" href="images/icon.webp">
+  <link rel="preload" href="images/project-6.webp" as="image">
+</head>
+<body class="project-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Ryan Hay</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about"    onclick="sessionStorage.setItem('scrollTo','about')">About</a></li>
+      <li><a href="index.html#projects" onclick="sessionStorage.setItem('scrollTo','projects')">Projects</a></li>
+      <li><a href="index.html#contact"  onclick="sessionStorage.setItem('scrollTo','contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Info left, image right -->
+    <div class="proj-header-row">
+
+      <!-- Left: category, title, tagline pushed to top / meta pinned to bottom -->
+      <div class="proj-header-left">
+        <div>
+          <p class="proj-cat">Software & Robotics Research</p>
+          <h1 class="proj-title">HAND ERC</h1>
+          <p class="proj-tagline">Built an interface to control a robotic hand with sliders and presets.</p>
+        </div>
+        <div class="proj-meta">
+          <div><p class="meta-label">Year</p>   <p class="meta-value">2025-2026</p></div>
+          <div><p class="meta-label">Status</p> <p class="meta-value">Ongoing</p></div>
+          <div><p class="meta-label">Role</p>   <p class="meta-value">Undergraduate Research Assistant</p></div>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="proj-hero-side">
+        <img src="images/project-6.webp" alt="HAND ERC">
+      </div>
+
+    </div>
+
+    <!-- Overview left, tools right -->
+    <div class="proj-body">
+
+      <div class="proj-desc">
+        <p class="content-label" style="color: var(--teal); font-size: 0.85rem;">Overview</p>
+        <p>
+          As an undergraduate research assistant at <a href="https://hand-erc.org/project-pages-landing-page/" target="_blank" rel="noopener" style="color: var(--teal);">Human Augmentation via Dexterity</a> (HAND), I have contributed to several projects.
+        </p>
+        <p>
+          I built a database of commercial robotic hands including specifications and images hosted on GitHub Pages. The database provides standardized information across many hands to support 
+          comparison and benchmarking.
+        </p>
+        <p>
+          I also developed a Qt interface in C++ to control a 3D printed Robot Nano Hand using sliders and configurable presets, shown in the demo video in <span class="fig-ref" data-fig="1">Fig. 1</span>. 
+          The interface allows researchers to control the hand in real time to assess its dexterity and performance.
+        </p>
+        <p>
+          Currently, I am collecting tactile data using Universal Manipulation Interface (UMI) hand grippers performing complex tasks, which will be used to train a robot claw with tactile sensors 
+          to replicate those tasks.
+        </p>
+      </div>
+
+      <!-- Tech & Tools -->
+      <div>
+        <div class="sidebar-block">
+          <p class="content-label">Tech &amp; Tools</p>
+          <div class="tag-list">
+            <span class="tag">C++</span>
+            <span class="tag">Qt</span>
+            <span class="tag">Python</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Github</span>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="sidebar-block">
+          <p class="content-label">Links</p>
+          <div class="proj-links">
+            <a href="https://hand-erc.github.io/hands.html" target="_blank" rel="noopener" class="proj-link">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              Commercial Robotic Hand Database
+            </a>
+            <a href="https://github.com/ryanhay29/robotnanohand" target="_blank" rel="noopener" class="proj-link">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              Robot Nano Hand Interface
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Interactive Gallery -->
+    <div class="proj-gallery">
+      <p class="content-label">Gallery</p>
+
+      <div class="gallery-main" style="position:relative;">
+        <img id="galleryMainImg" src="images/project6/handthumbnail.webp" alt="Gallery Main." style="display:none;">
+        <iframe id="galleryMainVideo" src="https://www.youtube.com/embed/kCV66GzrXGE?si=5voxt08rtjaAgY8p" title="" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          style="display:block; position:absolute; inset:0; width:100%; height:100%; border:none;">
+        </iframe>
+      </div>
+      <p class="media-caption" id="galleryCaption"><b>Fig. 1.</b> A video demo of the Robot Nano Hand being controlled by the interface, using sliders and presets to control the hand in real time.</p>
+
+      <div class="gallery-thumbs-wrap">
+        <div class="gallery-thumbs">
+          <button class="gallery-thumb active" data-type="video" data-src="https://www.youtube.com/embed/kCV66GzrXGE?si=5voxt08rtjaAgY8p" data-caption="<b>Fig. 1.</b> A video demo of the Robot Nano Hand being controlled by the interface, using sliders and presets to control the hand in real time.">
+            <img src="images/project6/handthumbnail.webp" alt="Video demo of the Robot Nano Hand being controlled by the interface">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <a href="index.html" id="backBtn" class="btn-back" style="margin-top: 2rem;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 7H2M6 3L2 7l4 4"/>
+      </svg>
+      Back to all projects
+    </a>
+
+  </div>
+
+  <!-- Lightbox -->
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Ryan Hay &emsp; Latest Update: <span id="lastUpdated"></span></p>
+    <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode"></button>
+  </footer>
+
+</body>
+</html>

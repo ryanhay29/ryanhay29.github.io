@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- index.html - Ryan Hay-->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="site.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Ryan Hay</title>
+  <link rel="icon" type="image/webp" href="images/icon.webp">
+  <link rel="preload" href="images/hero-photo.webp" as="image">
+</head>
+<body class="index-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#hero" class="nav-logo">Ryan Hay</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-name-wrap">
+          <h1 class="hero-name main-text">
+            <span class="line"><span class="name-wrap name-first">
+              <span class="letter" style="animation-delay:0s">R</span><span class="letter" style="animation-delay:0.05s">y</span><span class="letter" style="animation-delay:0.1s">a</span><span class="letter" style="animation-delay:0.15s">n</span>
+            </span></span>
+            <span class="line"><span class="name-wrap">
+              <span class="letter" style="animation-delay:0.2s">H</span><span class="letter" style="animation-delay:0.25s">a</span><span class="letter" style="animation-delay:0.3s">y</span>
+            </span></span>
+          </h1>
+        </div>
+        <div class="hero-descriptor">
+          <p class="hero-desc-text">
+            An undergraduate sophomore at&nbsp;<a href="https://www.northwestern.edu" target="_blank" rel="noopener" class="nu-word">Northwestern University</a>,
+            majoring in <span style="color: var(--ink);">Mechanical Engineering</span> with a minor in <span style="color: var(--ink);">Computer Science</span> and concentration in <span style="color: var(--ink);">Robotics</span>.
+          </p>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/hero-photo.webp" alt="Ryan Hay">
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="section-header">
+      <span class="section-label">About me</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="about-photo">
+          <img src="images/about-photo.webp" alt="Ryan Hay" loading="lazy">
+        </div>
+      </div>
+      <div>
+        <h2 class="about-intro">Hi, I'm <em>Ryan</em>!</h2>
+        <p class="about-body">I'm driven by a curiosity for how systems work <i>end to end</i>, from hardware to software.</p>
+        <p class="about-body">On collaborative coursework and club projects, I've played a key role in designing solutions for a wide range of engineering problems including a front-end loader bucket for excavating lunar regolith, a guitar fret-pressing mechanism, a bench-fence hybrid to prevent child drowning, and a pillow designed for glasses-wearers.</p>
+        <p class="about-body">Outside of class, I play guitar, draw, and animate. I also have a background in technical theatre, where I stage managed and co-designed sets and award-winning lighting.</p>
+        <div style="margin-top:2rem; text-align:center;">
+          <a href="https://drive.google.com/file/d/10modutQS97mi8qizILJnUyyUBzEMVTCt/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-arrow">
+            View résumé
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12L12 2M12 2H5M12 2v7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="section-header">
+      <span class="section-label">Projects</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <!-- PROJECT 8 -->
+      <a href="project-8.html" class="project-card">
+        <div class="project-thumb pt-8"><img src="images/project-8.webp" alt="Project 8 Thumbnail" loading="lazy"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Structural Design &amp; FEA</p>
+            <p class="project-year">2025 – 2026</p>
+          </div>
+          <h3 class="project-title">NASA Lunabotics</h3>
+          <p class="project-desc">Designed and validated a front end loader bucket for excavation.</p>
+        </div>
+      </a>
+
+      <!-- PROJECT 7 -->
+      <a href="project-7.html" class="project-card">
+        <div class="project-thumb pt-7"><img src="images/project-7.webp" alt="Project 7 Thumbnail"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Mechatronics</p>
+            <p class="project-year">2025 – 2026</p>
+          </div>
+          <h3 class="project-title">Guitar Robot</h3>
+          <p class="project-desc">Designed a solenoid-driven mechanism to press frets on a guitar.</p>
+        </div>
+      </a>
+
+      <!-- PROJECT 6 -->
+      <a href="project-6.html" class="project-card">
+        <div class="project-thumb pt-6"><img src="images/project-6.webp" alt="Project 6 Thumbnail"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Software &amp; Robotics Research</p>
+            <p class="project-year">2025 - 2026</p>
+          </div>
+          <h3 class="project-title">HAND ERC</h3>
+          <p class="project-desc">Built an interface to control a robotic hand with sliders and presets.</p>
+        </div>
+      </a>
+
+      <!-- PROJECT 5 -->
+      <a href="project-5.html" class="project-card">
+        <div class="project-thumb pt-5"><img src="images/project-5.webp" alt="Project 5 Thumbnail"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Electrical &amp; Systems Integration</p>
+            <p class="project-year">2024 – 2025</p>
+          </div>
+          <h3 class="project-title">Drum Robot</h3>
+          <p class="project-desc">Integrated actuators and electrical systems for robotic drumming.</p>
+        </div>
+      </a>
+
+      <!-- PROJECT 4 -->
+      <a href="project-4.html" class="project-card">
+        <div class="project-thumb pt-4"><img src="images/project-4.webp" alt="Project 4 Thumbnail"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Human-Centered Product Design</p>
+            <p class="project-year">2025</p>
+          </div>
+          <h3 class="project-title">The Driftwood Pillow</h3>
+          <p class="project-desc">Designed a pillow to allow glasses-wearers to lie on their side.</p>
+        </div>
+      </a>
+
+      <!-- PROJECT 3 -->
+      <a href="project-3.html" class="project-card">
+        <div class="project-thumb pt-3"><img src="images/project-3.webp" alt="Project 3 Thumbnail"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Safety-Oriented Product Design</p>
+            <p class="project-year">2025</p>
+          </div>
+          <h3 class="project-title">The Fench</h3>
+          <p class="project-desc">Designed a bench-fence hybrid to prevent child drowning.</p>
+        </div>
+      </a>
+
+      <!-- PROJECT 2 -->
+      <a href="project-2.html" class="project-card">
+        <div class="project-thumb pt-2"><img src="images/project-2.webp" alt="Project 2 Thumbnail"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Stage Management &amp; Design</p>
+            <p class="project-year">2021 – 2024</p>
+          </div>
+          <h3 class="project-title">Technical Theatre</h3>
+          <p class="project-desc">Showcasing my work in technical theatre from high school.</p>
+        </div>
+      </a>
+
+      <!-- PROJECT 1 -->
+      <a href="project-1.html" class="project-card">
+        <div class="project-thumb pt-1"><img src="images/project-1.webp" alt="Project 1 Thumbnail"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Competitive Robotics</p>
+            <p class="project-year">2021 – 2024</p>
+          </div>
+          <h3 class="project-title">VEX Robotics</h3>
+          <p class="project-desc">Showcasing my work on the VEX robotics team in high school.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div style="max-width:520px">
+      <h2 class="contact-headline" style="margin-top: -2rem;">Let's connect!</h2>
+
+      <ul class="contact-links">
+        <!-- Email -->
+        <li>
+          <a href="mailto:ryanhay2028@u.northwestern.edu">
+            <span class="c-icon">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                <rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/>
+                <path d="M1.5 5.5L8 9.5L14.5 5.5"/>
+              </svg>
+            </span>
+            ryanhay2028@u.northwestern.edu
+          </a>
+        </li>
+        <!-- LinkedIn -->
+        <li>
+          <a href="https://linkedin.com/in/ryandhay" target="_blank" rel="noopener">
+            <span class="c-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.766c1.393-2.253 7-2.433 7 2.418v6.816z"/>
+              </svg>
+
+            </span>
+            linkedin.com/in/ryandhay
+          </a>
+        </li>
+        <!-- Github -->
+        <li>
+          <a href="https://github.com/ryanhay29" target="_blank" rel="noopener">
+            <span class="c-icon">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+            </span>
+            github.com/ryanhay29
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Ryan Hay &emsp; Latest Update: <span id="lastUpdated"></span></p> <!-- Updated on site.js-->
+    <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode"></button>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+</body>
+</html>

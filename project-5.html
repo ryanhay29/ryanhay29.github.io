@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- project-5.html - Drum Robot -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="site.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Drum Robot</title>
+  <link rel="icon" type="image/webp" href="images/icon.webp">
+  <link rel="preload" href="images/project-5.webp" as="Drum Robot hero image">
+</head>
+<body class="project-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Ryan Hay</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about"    onclick="sessionStorage.setItem('scrollTo','about')">About</a></li>
+      <li><a href="index.html#projects" onclick="sessionStorage.setItem('scrollTo','projects')">Projects</a></li>
+      <li><a href="index.html#contact"  onclick="sessionStorage.setItem('scrollTo','contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Info left, image right -->
+    <div class="proj-header-row">
+
+      <!-- Left: category, title, tagline pushed to top / meta pinned to bottom -->
+      <div class="proj-header-left">
+        <div>
+          <p class="proj-cat">Electrical & Systems Integration</p>
+          <h1 class="proj-title">Drum Robot</h1>
+          <p class="proj-tagline">Integrated actuators and control systems for robotic drumming.</p>
+        </div>
+        <div class="proj-meta">
+          <div><p class="meta-label">Year</p>   <p class="meta-value">2024 - 2025</p></div>
+          <div><p class="meta-label">Status</p> <p class="meta-value">Complete</p></div>
+          <div><p class="meta-label">Role</p>   <p class="meta-value">Electrical Team Member</p></div>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="proj-hero-side">
+        <img src="images/project-5.webp" alt="Drum Robot">
+      </div>
+
+    </div>
+
+    <!-- Overview left, tools right -->
+    <div class="proj-body">
+
+      <div class="proj-desc">
+        <p class="content-label" style="color: var(--teal); font-size: 0.85rem;">Overview</p>
+        <p>
+          At the Northwestern University Robotics Club (NURC), I contributed to the drum robot on the Robotic Band subteam, focusing on the electrical systems and integration that enable MIDI-controlled playback.
+        </p>
+        <p>
+          The robot uses 6 servo motors to swing drumsticks, 3 stepper motors for torso movement, and a solenoid for the kick drum. The servo motors connect directly to the microcontroller, while each stepper 
+          motor is driven by a dedicated motor driver connected to the power supply and microcontroller. The solenoid was originally switched via a relay. When setting up the electronics, I designed the servo 
+          wiring to be modular so bad servos could be swapped out easily. The initial setup used an Arduino Uno and Arduino Mega, shown in <span class="fig-ref" data-fig="1">Fig. 1</span> and the demo video in <span class="fig-ref" data-fig="2">Fig. 2</span>. We later migrated to a Teensy 4.1 
+          and replaced the relay with a transistor for more reliable kick drum actuation. I rewired the robot accordingly and designed an updated schematic in KiCAD, shown in <span class="fig-ref" data-fig="3">Fig. 3</span>.
+        </p>
+        <p>
+          Outside of the electrical work, I assisted with bending the sheet metal for the robot torso, shown in <span class="fig-ref" data-fig="4">Fig. 4</span>. With the torso installed, I integrated the
+          stepper motors (as seen in <span class="fig-ref" data-fig="5">Fig. 5</span> and <span class="fig-ref" data-fig="6">Fig. 6</span>), which allow the torso to tilt forward and backward and rotate, 
+          adding to the performance. Additionally, I configured a Raspberry Pi in the robot's head to play videos during performances.
+        </p>
+        <p>
+          At the end of the year, the drum robot gave its first performance at Northwestern's Kresgepalooza event, playing several Daft Punk songs alongside live musicians. 
+          You can watch the performance of <q>Get Lucky</q> in <span class="fig-ref" data-fig="7">Fig. 7</span>.
+        </p>
+      </div>
+
+      <!-- Tech & Tools -->
+      <div>
+        <div class="sidebar-block">
+          <p class="content-label">Tech &amp; Tools</p>
+          <div class="tag-list">
+            <span class="tag">KiCAD</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">Raspberry Pi</span>
+            <span class="tag">Teensy 4.1</span>
+            <span class="tag">Stepper Motors</span>
+            <span class="tag">Servo Motors</span>
+            <span class="tag">Motor Drivers</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Interactive Gallery -->
+    <div class="proj-gallery">
+      <p class="content-label">Gallery</p>
+
+      <div class="gallery-main" style="position:relative;">
+        <img id="galleryMainImg" src="images/project5/initialwiringsetup.webp" alt="Gallery Main.">
+        <iframe id="galleryMainVideo" src="" title="" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          style="display:none; position:absolute; inset:0; width:100%; height:100%; border:none;">
+        </iframe>
+      </div>
+      <p class="media-caption" id="galleryCaption"><b>Fig. 1.</b> A photo of the initial wiring setup for the drum robot, with servos, motor drivers, Arduinos, relays, and power supplies.</p>
+
+      <div class="gallery-thumbs-wrap">
+        <div class="gallery-thumbs">
+          <button class="gallery-thumb active" data-src="images/project5/initialwiringsetup.webp" data-caption="<b>Fig. 1.</b> A photo of the initial wiring setup for the drum robot, with servos, motor drivers, Arduinos, relays, and power supplies.">
+            <img src="images/project5/initialwiringsetup.webp" alt="Photo of the initial wiring setup for the drum robot, with Arduinos and relays">
+          </button>
+          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/eX1mq3IHDzI?si=NZ9bb4zGEF4HFFq0" data-caption="<b>Fig. 2.</b> A demo video of the drum robot with the initial wiring setup, showing the servo motors being played by MIDI signals from a laptop.">
+            <img src="images/project5/video1thumbnail.webp" alt="Video demo of the drum robot with the initial wiring setup, showing the servo motors hitting the drums">
+          </button>
+          <button class="gallery-thumb" data-src="images/project5/schematics.webp" data-caption="<b>Fig. 3.</b> A schematic of the drum robot's electrical circuit designed in KiCAD, showing the connections between all components.">
+            <img src="images/project5/schematics.webp" alt="Schematic of the drum robot's electrical circuit">
+          </button>
+          <button class="gallery-thumb" data-src="images/project5/drumrobottorso.webp" data-caption="<b>Fig. 4.</b> A photo of the drum robot's torso, with the two tilting stepper motors visible at the base.">
+            <img src="images/project5/drumrobottorso.webp " alt="Photo of the drum robot's torso">
+          </button>
+          <button class="gallery-thumb" data-src="images/project5/backofwiring.webp" data-caption="<b>Fig. 5.</b> A photo of the back of the drum robot's wiring. All three stepper motors are visible, with the stepper motor for rotation attached to a gear.">
+            <img src="images/project5/backofwiring.webp " alt="Photo of the back of the drum robot's wiring">
+          </button>
+          <button class="gallery-thumb" data-src="images/project5/frontofwiring.webp" data-caption="<b>Fig. 6.</b> A photo of the front of the drum robot's wiring, showing the connections between the components. The wires dangling from the torso are purely for aesthetics.">
+            <img src="images/project5/frontofwiring.webp " alt="Photo of the front of the drum robot's wiring">
+          </button>
+          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/FyhijzrO1wY?si=7eY3sfnyy_C-LpvO" data-caption="<b>Fig. 7.</b> A video of the robot performing <q>Get Lucky</q> with human musicians.">
+            <img src="images/project5/video2thumbnail.webp" alt="Video performance of the drum robot in action">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <a href="index.html" id="backBtn" class="btn-back" style="margin-top: 2rem;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 7H2M6 3L2 7l4 4"/>
+      </svg>
+      Back to all projects
+    </a>
+
+  </div>
+
+  <!-- Lightbox -->
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Ryan Hay &emsp; Latest Update: <span id="lastUpdated"></span></p>
+    <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode"></button>
+  </footer>
+
+</body>
+</html>
