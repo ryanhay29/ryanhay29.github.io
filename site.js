@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* Dark mode toggle */
-  document.getElementById('lastUpdated').textContent = 'April 9, 2026'; /* --------------------------- Update this!! */
+  document.getElementById('lastUpdated').textContent = 'April 10, 2026'; /* --------------------------- Update this!! */
   const root = document.documentElement;
   const toggle = document.getElementById('dmToggle');
 
@@ -94,8 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       /* If a specific project card is stored, scroll to it; otherwise scroll to the section */
       let targetEl = null;
       if (scrollToCard) {
-        /* Find the project card whose href matches the stored filename */
-        targetEl = document.querySelector(`.project-card[href="${scrollToCard}"]`);
+        targetEl = document.querySelector(`.project-card[href*="${scrollToCard}"]`);
       }
       if (!targetEl) {
         targetEl = document.getElementById(scrollTarget);
@@ -278,11 +277,12 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Back button — smooth scroll to the specific project card on return */
     document.getElementById('backBtn').addEventListener('click', function(e) {
       e.preventDefault();
-      /* Store the current page filename so index.html can scroll to that card */
-      const currentPage = window.location.pathname.split('/').pop();
+      /* Get the folder name (e.g. "driftwood-pillow") from a URL like /driftwood-pillow/ */
+      const parts = window.location.pathname.replace(/\/$/, '').split('/');
+      const folderName = parts[parts.length - 1];
       sessionStorage.setItem('scrollTo', 'projects');
-      sessionStorage.setItem('scrollToCard', currentPage);
-      window.location.href = 'index.html';
+      sessionStorage.setItem('scrollToCard', folderName);
+      window.location.href = '/';
     });
   }
 });

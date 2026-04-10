@@ -325,8 +325,8 @@ section { scroll-margin-top: calc(var(--nav-h) * 0.6); }
 
 .project-info { padding: 1.5rem; }
 .project-meta-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem; }
-.project-cat { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.45rem; }
-.project-year { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; color: var(--muted); }
+.project-cat { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.45rem; }
+.project-year { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.45rem;}
 .project-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.55rem; }
 .project-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.65; }
 
