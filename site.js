@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* Dark mode toggle */
-  document.getElementById('lastUpdated').textContent = 'April 22, 2026'; /* --------------------------- Update this!! */
+  document.getElementById('lastUpdated').textContent = 'May 25, 2026'; /* --------------------------- Update this!! */
   const root = document.documentElement;
   const toggle = document.getElementById('dmToggle');
 

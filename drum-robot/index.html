@@ -43,7 +43,7 @@
         <div class="proj-meta">
           <div><p class="meta-label">Year</p>   <p class="meta-value">2024 - 2025</p></div>
           <div><p class="meta-label">Status</p> <p class="meta-value">Complete</p></div>
-          <div><p class="meta-label">Role</p>   <p class="meta-value">Electrical Team Member</p></div>
+          <div><p class="meta-label">Role</p>   <p class="meta-value">Electrical Lead and Mechanical Team Member</p></div>
         </div>
       </div>
 
@@ -66,16 +66,23 @@
           The robot uses 6 servo motors to swing drumsticks, 3 stepper motors for torso movement, and a solenoid for the kick drum. The servo motors connect directly to the microcontroller, while each stepper 
           motor is driven by a dedicated motor driver connected to the power supply and microcontroller. The solenoid was originally switched via a relay. When setting up the electronics, I designed the servo 
           wiring to be modular so bad servos could be swapped out easily. The initial setup used an Arduino Uno and Arduino Mega, shown in <span class="fig-ref" data-fig="1">Fig. 1</span> and the demo video in <span class="fig-ref" data-fig="2">Fig. 2</span>. We later migrated to a Teensy 4.1 
-          and replaced the relay with a transistor for more reliable kick drum actuation. I rewired the robot accordingly and designed an updated schematic in KiCAD, shown in <span class="fig-ref" data-fig="3">Fig. 3</span>.
+          (for it's native MIDI support and numerous pins) and replaced the relay with a transistor for more reliable kick drum actuation. I rewired the robot accordingly and designed an updated schematic in KiCAD, shown in <span class="fig-ref" data-fig="3">Fig. 3</span>.
         </p>
         <p>
           Outside of the electrical work, I assisted with bending the sheet metal for the robot torso, shown in <span class="fig-ref" data-fig="4">Fig. 4</span>. With the torso installed, I integrated the
-          stepper motors (as seen in <span class="fig-ref" data-fig="5">Fig. 5</span> and <span class="fig-ref" data-fig="6">Fig. 6</span>), which allow the torso to tilt forward and backward and rotate, 
+          stepper motors (as seen in <span class="fig-ref" data-fig="5">Fig. 5</span>), which allow the torso to tilt forward and backward and rotate, 
           adding to the performance. Additionally, I configured a Raspberry Pi in the robot's head to play videos during performances.
         </p>
         <p>
-          At the end of the year, the drum robot gave its first performance at Northwestern's Kresgepalooza event, playing several Daft Punk songs alongside live musicians. 
-          You can watch the performance of <q>Get Lucky</q> in <span class="fig-ref" data-fig="7">Fig. 7</span>.
+          At the end of the year, the drum robot gave its first performance at Northwestern's Kresgepalooza event in 2025, playing several Daft Punk songs alongside live musicians. 
+          You can watch the performance of <q>Get Lucky</q> in <span class="fig-ref" data-fig="6">Fig. 6</span>.
+        </p>
+        <p>
+          The next year, while working on the guitar robot, I also improved the drum robot's kicker mechanism and servo joint assemblies. 
+          I designed a sheet metal mount that I water-jet and bent in the shop, then redesigned and reprinted the mount for the solenoids 
+          with smoother geometric transitions, thicker walls, and slots for wire routing, shown in 
+          <span class="fig-ref" data-fig="7">Fig. 7</span>. I incorporated fans to dissipate heat and adjusted the kicker position to 
+          improve solenoid contact while avoiding resonant collisions during the swing, shown in <span class="fig-ref" data-fig="8">Fig. 8</span>. I also reprinted all servo joints with higher infill, additional fillets, and optimized layer orientation to improve strength against axial and shear loads. With these improvements, the drum robot performed with live musicians at Kresgepalooza 2026. I led the band's rehearsals and performed as lead guitarist. You can watch a segment of the <q>Mr. Brightside</q> performance in <span class="fig-ref" data-fig="9">Fig. 9</span>.
         </p>
       </div>
 
@@ -124,14 +131,20 @@
           <button class="gallery-thumb" data-src="../images/drum-robot/drumrobottorso.webp" data-caption="<b>Fig. 4.</b> A photo of the drum robot's torso, with the two tilting stepper motors visible at the base.">
             <img src="../images/drum-robot/drumrobottorso.webp " alt="Photo of the drum robot's torso">
           </button>
-          <button class="gallery-thumb" data-src="../images/drum-robot/backofwiring.webp" data-caption="<b>Fig. 5.</b> A photo of the back of the drum robot's wiring. All three stepper motors are visible, with the stepper motor for rotation attached to a gear.">
-            <img src="../images/drum-robot/backofwiring.webp " alt="Photo of the back of the drum robot's wiring">
-          </button>
-          <button class="gallery-thumb" data-src="../images/drum-robot/frontofwiring.webp" data-caption="<b>Fig. 6.</b> A photo of the front of the drum robot's wiring, showing the connections between the components. The wires dangling from the torso are purely for aesthetics.">
+          <button class="gallery-thumb" data-src="../images/drum-robot/frontofwiring.webp" data-caption="<b>Fig. 5.</b> A photo of the front of the drum robot's wiring, showing the connections between the components. The wires dangling from the torso are purely for aesthetics.">
             <img src="../images/drum-robot/frontofwiring.webp " alt="Photo of the front of the drum robot's wiring">
           </button>
-          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/FyhijzrO1wY?si=7eY3sfnyy_C-LpvO" data-caption="<b>Fig. 7.</b> A video of the robot performing <q>Get Lucky</q> with human musicians.">
+          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/FyhijzrO1wY?si=7eY3sfnyy_C-LpvO" data-caption="<b>Fig. 6.</b> A video of the robot performing <q>Get Lucky</q> with human musicians.">
             <img src="../images/drum-robot/video2thumbnail.webp" alt="Video performance of the drum robot in action">
+          </button>
+          <button class="gallery-thumb" data-src="../images/drum-robot/front_kicker.webp" data-caption="<b>Fig. 7.</b> A photo of the improved kicker mechanism for the kick drum, utilizing bent sheet metal to mount to the kickdrum">
+            <img src="../images/drum-robot/front_kicker.webp" alt="Placeholder image">
+          </button>
+          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/882JbHPMh6I?si=Wc37bGoNwWmmpizs" data-caption="<b>Fig. 8.</b> A video of the improved kicker mechanism in action.">
+            <img src="../images/drum-robot/kicker_fixed_thumb.webp" alt="Placeholder video">
+          </button>
+          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/8rwLJ9hlxh8?si=bqLL6LeLCdUf5s8A" data-caption="<b>Fig. 9.</b> A video of the robot performing <q>Mr. Brightside</q> with human musicians. I am the lead guitarist in the yellow shirt.">
+            <img src="../images/drum-robot/brightside_thumb.webp" alt="Placeholder video">
           </button>
         </div>
       </div>
