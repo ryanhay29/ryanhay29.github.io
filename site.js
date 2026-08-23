@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* Dark mode toggle */
-  document.getElementById('lastUpdated').textContent = 'May 25, 2026'; /* --------------------------- Update this!! */
+  document.getElementById('lastUpdated').textContent = 'August 23, 2026'; /* --------------------------- Update this!! */
   const root = document.documentElement;
   const toggle = document.getElementById('dmToggle');
 
@@ -75,6 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Index page scripts */
   if (document.body.classList.contains('index-page')) {
+    const scrollCue = document.querySelector('.scroll-cue');
+    if (scrollCue) {
+      const updateScrollCue = () => {
+        if (window.scrollY > 24) {
+          scrollCue.classList.remove('is-visible');
+          scrollCue.classList.add('is-hidden');
+        }
+      };
+      updateScrollCue();
+      window.addEventListener('scroll', updateScrollCue, { passive: true });
+      setTimeout(() => {
+        if (window.scrollY <= 24) scrollCue.classList.add('is-visible');
+      }, 5000);
+    }
+
     /* Intercept same-page anchor clicks */
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -120,6 +135,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainVideo = document.getElementById('galleryMainVideo');
     const caption = document.getElementById('galleryCaption');
     const thumbs = document.querySelectorAll('.gallery-thumb');
+    const initialThumb = document.querySelector('.gallery-thumb.active');
+
+    if (initialThumb) {
+      if (initialThumb.dataset.type === 'video') {
+        mainImg.style.display = 'none';
+        mainVideo.src = initialThumb.dataset.src;
+        mainVideo.style.display = 'block';
+      } else {
+        mainVideo.style.display = 'none';
+        mainVideo.src = '';
+        mainImg.src = initialThumb.dataset.src;
+        mainImg.style.display = 'block';
+      }
+      caption.innerHTML = initialThumb.dataset.caption;
+    }
+
     thumbs.forEach(thumb => {
       thumb.addEventListener('click', () => {
         if (thumb.classList.contains('active')) return;

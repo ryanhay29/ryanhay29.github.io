@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="style.css" />
 
   <title>Ryan Hay</title>
-  <link rel="icon" type="image/webp" href="images/icon.webp">
-  <link rel="preload" href="images/hero-photo.webp" as="image">
+  <link rel="icon" type="image/png" href="images/icon.png">
+  <link rel="preload" href="images/hero-photo.jpeg" as="image">
 </head>
 <body class="index-page">
 
@@ -34,6 +34,9 @@
   <!-- Hero -->
   <section id="hero">
     <div class="hero-inner">
+      <div class="hero-photo">
+        <img src="images/hero-photo.jpeg" alt="Ryan Hay">
+      </div>
       <div class="hero-left">
         <div class="hero-name-wrap">
           <h1 class="hero-name main-text">
@@ -47,14 +50,16 @@
         </div>
         <div class="hero-descriptor">
           <p class="hero-desc-text">
-            An undergraduate sophomore at&nbsp;<a href="https://www.northwestern.edu" target="_blank" rel="noopener" class="nu-word">Northwestern University</a>,
+            An undergraduate junior at&nbsp;<a href="https://www.northwestern.edu" target="_blank" rel="noopener" class="nu-word">Northwestern University</a>,
             majoring in <span style="color: var(--ink);">Mechanical Engineering</span> with a minor in <span style="color: var(--ink);">Computer Science</span> and concentration in <span style="color: var(--ink);">Robotics</span>.
           </p>
         </div>
       </div>
-      <div class="hero-photo">
-        <img src="images/hero-photo.webp" alt="Ryan Hay">
-      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 9l7 7 7-7" />
+      </svg>
     </div>
   </section>
 
@@ -65,14 +70,8 @@
       <div class="section-line"></div>
     </div>
     <div class="about-grid">
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <div class="about-photo">
-          <img src="images/about-photo.webp" alt="Ryan Hay" loading="lazy">
-        </div>
-      </div>
       <div>
         <h2 class="about-intro">Hi, I'm <em>Ryan</em>!</h2>
-        <p class="about-body">I'm driven by a curiosity for how systems work <i>end to end</i>, from hardware to software.</p>
         <p class="about-body">On collaborative coursework and club projects, I've played a key role in designing solutions for a wide range of engineering problems including a front-end loader bucket for excavating lunar regolith, a guitar fret-pressing mechanism, a bench-fence hybrid to prevent child drowning, and a pillow designed for glasses-wearers.</p>
         <p class="about-body">Outside of class, I play guitar, draw, and animate. I also have a background in technical theatre, where I stage managed and co-designed sets and award-winning lighting.</p>
         <div style="margin-top:2rem; text-align:center;">
@@ -82,6 +81,11 @@
               <path d="M2 12L12 2M12 2H5M12 2v7"/>
             </svg>
           </a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="about-photo">
+          <img src="images/about-photo.webp" alt="Ryan Hay" loading="lazy">
         </div>
       </div>
     </div>
@@ -96,6 +100,37 @@
     </div>
     <div class="projects-grid">
 
+      <!-- FOOD DISPENSER (COMING SOON) -->
+      <div class="project-card project-card--disabled">
+        <div class="project-thumb project-thumb--disabled pt-11">
+          <img src="images/dispenser.webp" alt="Food Dispenser Thumbnail" loading="lazy">
+          <div class="project-card-overlay">
+            <span class="coming-soon-label">Coming Soon</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Manufacturing &amp; Design Engineering</p>
+            <p class="project-year">Summer 2026</p>
+          </div>
+          <h3 class="project-title">Automated Dispenser</h3>
+          <p class="project-desc">Engineered a food and liquid dispenser to give students with disabilities more independence.</p>
+        </div>
+      </div>
+
+      <!-- BIKE BRAKE CALIPERS -->
+      <a href="bike-brake-calipers/" class="project-card">
+        <div class="project-thumb pt-10"><img src="images/caliper.webp" alt="Bike Brake Calipers Thumbnail" loading="lazy"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Topology Optimization &amp; FEA</p>
+            <p class="project-year">2026</p>
+          </div>
+          <h3 class="project-title">Brake Caliper</h3>
+          <p class="project-desc">Designed and validated a bike brake caliper following ISO standards.</p>
+        </div>
+      </a>
+
       <!-- LUNABOTICS -->
       <a href="lunabotics/" class="project-card">
         <div class="project-thumb pt-8"><img src="images/lunabotics.webp" alt="Lunabotics Thumbnail" loading="lazy"></div>
@@ -104,8 +139,21 @@
             <p class="project-cat">Structural Design &amp; FEA</p>
             <p class="project-year">2025 – 2026</p>
           </div>
-          <h3 class="project-title">NASA Lunabotics</h3>
+          <h3 class="project-title">NASA Lunabotics 2026 Challenge</h3>
           <p class="project-desc">Designed and validated a front end loader bucket for excavation.</p>
+        </div>
+      </a>
+
+      <!-- HANDERC-->
+      <a href="handerc/" class="project-card">
+        <div class="project-thumb pt-9"><img src="images/handerc.webp" alt="HAND ERC Thumbnail" loading="lazy"></div>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <p class="project-cat">Robotics &amp; Research</p>
+            <p class="project-year">2025 - 2026</p>
+          </div>
+          <h3 class="project-title">HAND ERC</h3>
+          <p class="project-desc">Created a software interface to control a robotic hand and built a dual-arm teleoperation system.</p>
         </div>
       </a>
 
@@ -119,19 +167,6 @@
           </div>
           <h3 class="project-title">Guitar Robot</h3>
           <p class="project-desc">Designed a solenoid-driven mechanism to press frets on a guitar.</p>
-        </div>
-      </a>
-
-      <!-- HAND ERC -->
-      <a href="hand-erc/" class="project-card">
-        <div class="project-thumb pt-6"><img src="images/hand-erc.webp" alt="HAND ERC Thumbnail"></div>
-        <div class="project-info">
-          <div class="project-meta-row">
-            <p class="project-cat">Software &amp; Research</p>
-            <p class="project-year">2025 - 2026</p>
-          </div>
-          <h3 class="project-title">HAND ERC</h3>
-          <p class="project-desc">Built an interface to control a robotic hand with sliders and presets.</p>
         </div>
       </a>
 
@@ -179,7 +214,7 @@
         <div class="project-thumb pt-2"><img src="images/technical-theatre.webp" alt="Technical Theatre Thumbnail"></div>
         <div class="project-info">
           <div class="project-meta-row">
-            <p class="project-cat">Stage Management &amp; Design</p>
+            <p class="project-cat">Stage Management &amp; Set Design</p>
             <p class="project-year">2021 – 2024</p>
           </div>
           <h3 class="project-title">Technical Theatre</h3>

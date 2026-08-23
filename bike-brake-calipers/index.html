@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- bike-brake-calipers/index.html - Bike Brake Calipers -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="../site.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+
+  <title>Bike Brake Calipers</title>
+  <link rel="icon" type="image/png" href="../images/icon.png">
+</head>
+<body class="project-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../" class="nav-logo">Ryan Hay</a>
+    <ul class="nav-links">
+      <li><a href="../#about"    onclick="sessionStorage.setItem('scrollTo','about')">About</a></li>
+      <li><a href="../#projects" onclick="sessionStorage.setItem('scrollTo','projects')">Projects</a></li>
+      <li><a href="../#contact"  onclick="sessionStorage.setItem('scrollTo','contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Info left, image right -->
+    <div class="proj-header-row">
+      <div class="proj-header-left">
+        <div>
+          <p class="proj-cat">Mechanical Design &amp; Analysis</p>
+          <h1 class="proj-title">Bike Brake Calipers</h1>
+          <p class="proj-tagline">Designed and validated a bike brake caliper following ISO standards.</p>
+        </div>
+        <div class="proj-meta">
+          <div><p class="meta-label">Year</p>   <p class="meta-value">2025</p></div>
+          <div><p class="meta-label">Status</p> <p class="meta-value">Completed</p></div>
+          <div><p class="meta-label">Role</p>   <p class="meta-value">FEA and Topology Lead</p></div>
+        </div>
+      </div>
+
+      <div class="proj-hero-side">
+        <img src="../images/caliper.webp" alt="Bike brake calipers project preview">
+      </div>
+    </div>
+
+    <!-- Overview left, tools right -->
+    <div class="proj-body">
+      <div class="proj-desc">
+        <p class="content-label" style="color: var(--accent); font-size: 0.85rem;">Overview</p>
+        <p>
+          For MECH_ENG 240, my team and I designed a brake caliper for the back wheel on a bicycle. Our goal was to meet ISO 4210-2 braking standards while keeping the calipers as light as possible. We manufactured them in SLS Nylon 12. I was the FEA and Topology Lead, using structural analysis to guide geometry changes and check the designs before testing.
+        </p>
+        <p>
+          I used cable tension, pad reaction force, and rim friction to calculate the loads for FEA in Siemens NX. The initial analysis showed high stress near the inner corners of both calipers and identified the cable attachment region as an important load path. I ran topology optimization on each caliper's design space to see where material could be removed and where more support was needed. See <span class="fig-ref" data-fig="1">Fig. 1</span> and <span class="fig-ref" data-fig="2">Fig. 2</span> for the left and right design spaces, respectively. I used these results to reduce mass while keeping the important load paths stiff.
+        </p>
+        <p>
+          The initial FEA showed a combined maximum displacement of 7.62 mm, below the 11 mm limit for the cable system, as shown in <span class="fig-ref" data-fig="3">Fig. 3.</span> We printed a prototype, shown in <span class="fig-ref" data-fig="4">Fig. 4</span>, and tested it on a real bike. It stopped the bike in 16.1 m, just beyond the 15 m ISO limit. A separate force test showed that deflection was the main problem: the calipers bottomed out at 96 N, well below the 150 N target, before the full input force could reach the brake pads and rim. This limited the system's clamping force. To revise the calipers, I added material to the through-holes, turning them into recessed debosses. This created an I-beam-like cross-section and increased stiffness.
+        </p>
+        <p>
+          The revised design reduced maximum stress by 26% in the left caliper and 42% in the right caliper. See <span class="fig-ref" data-fig="5">Fig. 5</span> and <span class="fig-ref" data-fig="6">Fig. 6</span> for the FEA stress comparisons. Displacement also decreased by roughly 60%, as shown in <span class="fig-ref" data-fig="7">Fig. 7</span> and <span class="fig-ref" data-fig="8">Fig. 8.</span> In final testing, the calipers weighed 70.9 g, withstood 160 N, and stopped the bike in 12.8 m. The updated calipers are shown installed on the bike in <span class="fig-ref" data-fig="9">Fig. 9</span>. Comparing the FEA results with the physical tests helped us identify the needed changes and verify that the revised calipers met the ISO requirement.
+        </p>
+      </div>
+
+      <div>
+        <div class="sidebar-block">
+          <p class="content-label">Tech &amp; Tools</p>
+          <div class="tag-list">
+            <span class="tag">Siemens NX</span>
+            <span class="tag">FEA</span>
+            <span class="tag">Topology Optimization</span>
+            <span class="tag">Hand Calculations</span>
+            <span class="tag">Prototype Testing</span>
+            <span class="tag">Design Validation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="proj-gallery">
+      <p class="content-label">Gallery</p>
+      <div class="gallery-main" style="position:relative;">
+        <img id="galleryMainImg" src="../images/brake-calipers/leftdesignspaceandto.png" alt="Left brake caliper design space and topology optimization">
+        <iframe id="galleryMainVideo" src="" title="" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          style="display:none; position:absolute; inset:0; width:100%; height:100%; border:none;">
+        </iframe>
+      </div>
+      <p class="media-caption" id="galleryCaption"><b>Fig. 1.</b> A topology optimization result for the left brake caliper design space.</p>
+
+      <div class="gallery-thumbs-wrap">
+        <div class="gallery-thumbs">
+          <button class="gallery-thumb active" data-src="../images/brake-calipers/leftdesignspaceandto.webp"
+            data-caption="<b>Fig. 1.</b> A topology optimization result for the left caliper design space, showing the primary load paths.">
+            <img src="../images/brake-calipers/leftdesignspaceandto.webp" alt="Left brake caliper design space and topology optimization" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" data-src="../images/brake-calipers/rightdesignspaceandto.webp"
+            data-caption="<b>Fig. 2.</b> A topology optimization result for the right caliper design space, showing a similar load path.">
+            <img src="../images/brake-calipers/rightdesignspaceandto.webp" alt="Right brake caliper design space and topology optimization" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" data-src="../images/brake-calipers/initialdesigndisplacementfea.webp"
+            data-caption="<b>Fig. 3.</b> Displacement FEA for the initial brake caliper design, showing 7.62 mm of combined maximum displacement.">
+            <img src="../images/brake-calipers/initialdesigndisplacementfea.webp" alt="Displacement FEA of the initial brake caliper design" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" data-src="../images/brake-calipers/photoofinitialdesign.webp"
+            data-caption="<b>Fig. 4.</b> A photo of the parts from the initial printed brake caliper design.">
+            <img src="../images/brake-calipers/photoofinitialdesign.webp" alt="Photo of the parts from the initial printed brake caliper design" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" data-src="../images/brake-calipers/comparisonleftcaliperstress.webp"
+            data-caption="<b>Fig. 5.</b> Stress comparison for the left caliper before and after revision. Ignoring the high artifacts, the revised design reduced maximum stress by 26%.">
+            <img src="../images/brake-calipers/comparisonleftcaliperstress.webp" alt="Left caliper stress comparison" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" data-src="../images/brake-calipers/comparisonrightcaliperstress.webp"
+            data-caption="<b>Fig. 6.</b> Stress comparison for the right caliper before and after revision. Ignoring the high artifacts, the revised design reduced maximum stress by 42%.">
+            <img src="../images/brake-calipers/comparisonrightcaliperstress.webp" alt="Right caliper stress comparison" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" data-src="../images/brake-calipers/comparisonleftcaliperdisplacement.webp"
+            data-caption="<b>Fig. 7.</b> A displacement comparison for the left caliper before and after the design revision, showing a 62% reduction in maximum displacement.">
+            <img src="../images/brake-calipers/comparisonleftcaliperdisplacement.webp" alt="Left caliper displacement comparison" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" data-src="../images/brake-calipers/comparisonrightcaliperdisplacement.webp"
+            data-caption="<b>Fig. 8.</b> A displacement comparison for the right caliper before and after the design revision, showing a 58% reduction in maximum displacement.">
+            <img src="../images/brake-calipers/comparisonrightcaliperdisplacement.webp" alt="Right caliper displacement comparison" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" data-src="../images/brake-calipers/photooffinaldesignonbike.webp"
+            data-caption="<b>Fig. 9.</b> A photo of the final brake caliper design installed on a bike after achieving a 12.8 m stopping distance.">
+            <img src="../images/brake-calipers/photooffinaldesignonbike.webp" alt="Final brake caliper design installed on a bike" loading="lazy">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <a href="../" id="backBtn" class="btn-back" style="margin-top: 2rem;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 7H2M6 3L2 7l4 4"/>
+      </svg>
+      Back to all projects
+    </a>
+
+  </div>
+
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <footer>
+    <p>&copy; Ryan Hay &emsp; Latest Update: <span id="lastUpdated"></span></p>
+    <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode"></button>
+  </footer>
+
+</body>
+</html>
