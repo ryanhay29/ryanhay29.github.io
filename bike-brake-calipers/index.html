@@ -39,8 +39,8 @@
         </div>
         <div class="proj-meta">
           <div><p class="meta-label">Year</p>   <p class="meta-value">2025</p></div>
-          <div><p class="meta-label">Status</p> <p class="meta-value">Completed</p></div>
           <div><p class="meta-label">Role</p>   <p class="meta-value">FEA and Topology Lead</p></div>
+          <div><p class="meta-label">Class</p>   <p class="meta-value">Intro to Mechanical Design and Manufacturing</p></div>
         </div>
       </div>
 
@@ -54,10 +54,10 @@
       <div class="proj-desc">
         <p class="content-label" style="color: var(--accent); font-size: 0.85rem;">Overview</p>
         <p>
-          For MECH_ENG 240, my team and I designed a brake caliper for the back wheel on a bicycle. Our goal was to meet ISO 4210-2 braking standards while keeping the calipers as light as possible. We manufactured them in SLS Nylon 12. I was the FEA and Topology Lead, using structural analysis to guide geometry changes and check the designs before testing.
+          For Intro to Mechanical Design and Manufacturing, my team and I designed a brake caliper for the back wheel on a bicycle. Our goal was to meet ISO 4210-2 braking standards while keeping the calipers as light as possible. We manufactured them in SLS Nylon 12. I was the FEA and Topology Lead, using structural analysis to guide geometry changes and check the designs before testing.
         </p>
         <p>
-          I used cable tension, pad reaction force, and rim friction to calculate the loads for FEA in Siemens NX. The initial analysis showed high stress near the inner corners of both calipers and identified the cable attachment region as an important load path. I ran topology optimization on each caliper's design space to see where material could be removed and where more support was needed. See <span class="fig-ref" data-fig="1">Fig. 1</span> and <span class="fig-ref" data-fig="2">Fig. 2</span> for the left and right design spaces, respectively. I used these results to reduce mass while keeping the important load paths stiff.
+          I used cable tension, brake pad reaction forces, and rim friction to calculate the loads for FEA in Siemens NX. The initial analysis showed high stress near the inner corners of both calipers and identified the cable attachment region as an important load path. I ran topology optimization on each caliper's design space to see where material could be removed and where more support was needed. See <span class="fig-ref" data-fig="1">Fig. 1</span> and <span class="fig-ref" data-fig="2">Fig. 2</span> for the left and right design spaces, respectively. I used these results to reduce mass while keeping the important load paths stiff.
         </p>
         <p>
           The initial FEA showed a combined maximum displacement of 7.62 mm, below the 11 mm limit for the cable system, as shown in <span class="fig-ref" data-fig="3">Fig. 3.</span> We printed a prototype, shown in <span class="fig-ref" data-fig="4">Fig. 4</span>, and tested it on a real bike. It stopped the bike in 16.1 m, just beyond the 15 m ISO limit. A separate force test showed that deflection was the main problem: the calipers bottomed out at 96 N, well below the 150 N target, before the full input force could reach the brake pads and rim. This limited the system's clamping force. To revise the calipers, I added material to the through-holes, turning them into recessed debosses. This created an I-beam-like cross-section and increased stiffness.
