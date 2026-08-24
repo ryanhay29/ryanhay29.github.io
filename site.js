@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* Dark mode toggle */
-  document.getElementById('lastUpdated').textContent = 'August 23, 2026'; /* --------------------------- Update this!! */
+  document.getElementById('lastUpdated').textContent = 'August 24, 2026'; /* --------------------------- Update this!! */
   const root = document.documentElement;
   const toggle = document.getElementById('dmToggle');
 
@@ -125,6 +125,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollY = getOffsetTop(targetEl) - navH - 16;
         window.scrollTo(0, scrollY);
       }
+    }
+        /* Touch: pop the project card when its center is near viewport center */
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      const cards = document.querySelectorAll('.project-card');
+      let ticking = false;
+
+      function updateCenteredCard() {
+        const viewportCenter = window.innerHeight / 2;
+        // how close a card's center must be to viewport center to "pop" (px)
+        const threshold = 100;
+
+        cards.forEach(card => {
+          const rect = card.getBoundingClientRect();
+          const cardCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(viewportCenter - cardCenter);
+          card.classList.toggle('in-view', distance < threshold);
+        });
+
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(updateCenteredCard);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      updateCenteredCard(); // run once on load
     }
   }
 
@@ -317,3 +346,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
