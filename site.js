@@ -1,23 +1,20 @@
 /* Dark mode initial state (device preference first, then saved override) */
 const storedMode = localStorage.getItem('darkMode');
-if (storedMode !== null) {
-  if (storedMode === 'true') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  document.documentElement.classList.add('dark');
-} else {
-  document.documentElement.classList.remove('dark');
-}
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isDark = storedMode !== null ? storedMode === 'true' : prefersDark;
+document.documentElement.classList.toggle('dark', isDark);
 
 document.addEventListener('DOMContentLoaded', () => {
-  /* Shared scroll utility */
+  /* Shared utilities */
   function easeOutQuintic(t) { return 1 - Math.pow(1 - t, 5); }
+  function clamp(value, min, max) { return Math.min(Math.max(value, min), max); }
+
+  function getNavHeight() {
+    return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h') || '64');
+  }
 
   function smoothScrollTo(target, duration, extraOffset = 0) {
-    const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h') || '0');
+    const navH = getNavHeight();
     const start = window.scrollY;
     const end = target.getBoundingClientRect().top + window.scrollY - navH * 0.6 - extraOffset;
     const diff = end - start;
@@ -39,8 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(step);
   }
 
+  /* "Last updated" stamp — guarded since not every page has this element */
+  const lastUpdatedEl = document.getElementById('lastUpdated');
+  if (lastUpdatedEl) lastUpdatedEl.textContent = 'August 24, 2026'; /* --------------------------- Update this!! */
+
   /* Dark mode toggle */
-  document.getElementById('lastUpdated').textContent = 'August 24, 2026'; /* --------------------------- Update this!! */
   const root = document.documentElement;
   const toggle = document.getElementById('dmToggle');
 
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    /* If arriving from a project page, prevent nav fade and smooth scroll to target section */
+    /* If arriving from a project page, prevent nav fade and jump to target section */
     const scrollTarget = sessionStorage.getItem('scrollTo');
     const scrollToCard = sessionStorage.getItem('scrollToCard');
     if (scrollTarget) {
@@ -121,12 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
           while (el) { top += el.offsetTop; el = el.offsetParent; }
           return top;
         }
-        const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h') || '64');
-        const scrollY = getOffsetTop(targetEl) - navH - 16;
-        window.scrollTo(0, scrollY);
+        window.scrollTo(0, getOffsetTop(targetEl) - getNavHeight() - 16);
       }
     }
-        /* Touch: pop the project card when its center is near viewport center */
+
+    /* Touch: pop the project card when its center is near viewport center */
     if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
       const cards = document.querySelectorAll('.project-card');
       let ticking = false;
@@ -166,19 +165,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbs = document.querySelectorAll('.gallery-thumb');
     const initialThumb = document.querySelector('.gallery-thumb.active');
 
-    if (initialThumb) {
-      if (initialThumb.dataset.type === 'video') {
+    /* Swap the main media element to match a given thumb (shared by initial load + click) */
+    function displayMedia(thumb) {
+      if (thumb.dataset.type === 'video') {
         mainImg.style.display = 'none';
-        mainVideo.src = initialThumb.dataset.src;
+        mainVideo.src = thumb.dataset.src;
         mainVideo.style.display = 'block';
       } else {
         mainVideo.style.display = 'none';
-        mainVideo.src = '';
-        mainImg.src = initialThumb.dataset.src;
+        mainVideo.src = ''; /* stop video playback when switching away */
+        mainImg.src = thumb.dataset.src;
         mainImg.style.display = 'block';
       }
-      caption.innerHTML = initialThumb.dataset.caption;
+      caption.innerHTML = thumb.dataset.caption;
     }
+
+    if (initialThumb) displayMedia(initialThumb);
 
     thumbs.forEach(thumb => {
       thumb.addEventListener('click', () => {
@@ -187,17 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         thumb.classList.add('active');
         mainImg.classList.add('fade');
         setTimeout(() => {
-          if (thumb.dataset.type === 'video') {
-            mainImg.style.display = 'none';
-            mainVideo.src = thumb.dataset.src;
-            mainVideo.style.display = 'block';
-          } else {
-            mainVideo.style.display = 'none';
-            mainVideo.src = ''; /* stop video playback when switching away */
-            mainImg.src = thumb.dataset.src;
-            mainImg.style.display = 'block';
-          }
-          caption.innerHTML = thumb.dataset.caption;
+          displayMedia(thumb);
           mainImg.classList.remove('fade');
         }, 200);
       });
@@ -251,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.addEventListener('wheel', (e) => {
       e.preventDefault();
       const factor = e.deltaY < 0 ? 1.15 : 0.87;
-      scale = Math.min(Math.max(scale * factor, 1), 6);
+      scale = clamp(scale * factor, 1, 6);
       if (scale === 1) { panX = 0; panY = 0; }
       applyTransform(false);
     }, { passive: false });
@@ -301,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const a = { x: e.touches[0].clientX, y: e.touches[0].clientY };
         const b = { x: e.touches[1].clientX, y: e.touches[1].clientY };
         const dist = Math.hypot(b.x - a.x, b.y - a.y);
-        scale = Math.min(Math.max(pinchStartScale * (dist / pinchStartDist), 1), 6);
+        scale = clamp(pinchStartScale * (dist / pinchStartDist), 1, 6);
         if (scale === 1) { panX = 0; panY = 0; }
         applyTransform(false);
       } else if (e.touches.length === 1 && t1 && scale > 1) {
@@ -322,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         figRefs.forEach(r => r.classList.remove('active'));
         ref.classList.add('active');
         const figNum = ref.dataset.fig;
-        const target = Array.from(thumbs).find(t => 
+        const target = Array.from(thumbs).find(t =>
           t.dataset.caption.includes(`<b>Fig. ${figNum}.`)
         );
         if (target) {
@@ -346,4 +338,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
