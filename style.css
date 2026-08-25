@@ -23,23 +23,6 @@
 }
 
 
-/* ── Dark mode ──────────────────────────────────────────── */
-html.dark {
-  color-scheme: dark;
-  --ink:     #e3e2ed;
-  --muted:   #b4b4be;
-  --faint:   #34342f;
-  --bg:      #1a1a18;
-  --surface: #232322;
-  --accent:    #5BA3FF;
-  --accent-d:  rgb(207, 223, 255);
-  --accent-l:  #252c36;
-  --nu-purple: #7351bc;
-}
-html.dark nav { background: rgba(26,26,24,0.72); }
-html.dark .nav-logo:hover { color: rgb(207, 223, 255); }
-
-
 /* ── Base ───────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -101,40 +84,6 @@ nav {
 }
 .nav-links a:hover,
 .nav-links a.active { color: var(--ink); }
-
-
-/* ── Dark mode toggle ───────────────────────────────────── */
-
-/* Clickable icon button — replaces the old pill toggle */
-.dm-icon-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px; height: 28px;
-  flex-shrink: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-/* Both icons occupy the same slot */
-.dm-icon {
-  position: absolute;
-  width: 18px; height: 18px;
-  color: var(--muted);
-  transition: opacity 0.3s ease, transform 0.35s ease;
-}
-.dm-icon-wrap:hover .dm-icon { color: var(--ink); }
-
-/* Default state: sun visible, moon hidden (rotated out) */
-.dm-icon--sun  { opacity: 1; transform: rotate(0deg); }
-.dm-icon--moon { opacity: 0; transform: rotate(-45deg); }
-
-/* Dark state: moon visible, sun hidden (rotated out) */
-.dm-icon-wrap.is-dark .dm-icon--sun  { opacity: 0; transform: rotate(45deg); }
-.dm-icon-wrap.is-dark .dm-icon--moon { opacity: 1; transform: rotate(0deg); }
 
 
 /* ── Section layout ─────────────────────────────────────── */
@@ -654,19 +603,10 @@ section { scroll-margin-top: calc(var(--nav-h) * 0.6); }
   text-decoration-color: #16365f;
   opacity: 1;
 }
-html.dark .fig-ref:hover {
-  color: #b7d2ff;
-  text-decoration-color: #afccff;
-  opacity: 1;
-}
 .fig-ref.active {
   color: var(--accent-d);
   text-decoration-color: var(--accent-d);
   text-decoration-thickness: 2px;
-}
-html.dark .fig-ref.active {
-  color: #9bc0ff;
-  text-decoration-color: #9bc0ff;
 }
 
 /* -- Lightbox -- */

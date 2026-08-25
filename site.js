@@ -1,9 +1,3 @@
-/* Dark mode initial state (device preference first, then saved override) */
-const storedMode = localStorage.getItem('darkMode');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const isDark = storedMode !== null ? storedMode === 'true' : prefersDark;
-document.documentElement.classList.toggle('dark', isDark);
-
 document.addEventListener('DOMContentLoaded', () => {
   /* Shared utilities */
   function easeOutQuintic(t) { return 1 - Math.pow(1 - t, 5); }
@@ -39,39 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   /* "Last updated" stamp — guarded since not every page has this element */
   const lastUpdatedEl = document.getElementById('lastUpdated');
   if (lastUpdatedEl) lastUpdatedEl.textContent = 'August 24, 2026'; /* --------------------------- Update this!! */
-
-  /* Dark mode toggle */
-  const root = document.documentElement;
-  const toggle = document.getElementById('dmToggle');
-
-  /* Replace the toggle pill with a clickable icon button */
-  if (toggle) {
-    const btn = document.createElement('button');
-    btn.className = 'dm-icon-wrap' + (root.classList.contains('dark') ? ' is-dark' : '');
-    btn.setAttribute('aria-label', 'Toggle dark mode');
-    btn.innerHTML = `
-      <svg class="dm-icon dm-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="4"/>
-        <line x1="12" y1="2"  x2="12" y2="5"/>
-        <line x1="12" y1="19" x2="12" y2="22"/>
-        <line x1="4.22" y1="4.22"  x2="6.34" y2="6.34"/>
-        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
-        <line x1="2"  y1="12" x2="5"  y2="12"/>
-        <line x1="19" y1="12" x2="22" y2="12"/>
-        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
-        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
-      </svg>
-      <svg class="dm-icon dm-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-      </svg>`;
-    toggle.replaceWith(btn);
-
-    btn.addEventListener('click', () => {
-      root.classList.toggle('dark');
-      localStorage.setItem('darkMode', root.classList.contains('dark'));
-      btn.classList.toggle('is-dark', root.classList.contains('dark'));
-    });
-  }
 
   /* Index page scripts */
   if (document.body.classList.contains('index-page')) {
