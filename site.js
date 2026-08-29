@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* "Last updated" stamp — guarded since not every page has this element */
   const lastUpdatedEl = document.getElementById('lastUpdated');
-  if (lastUpdatedEl) lastUpdatedEl.textContent = 'August 27, 2026'; /* --------------------------- Update this!! */
+  if (lastUpdatedEl) lastUpdatedEl.textContent = 'August 29, 2026'; /* --------------------------- Update this!! */
 
   /* Index page scripts */
   if (document.body.classList.contains('index-page')) {
