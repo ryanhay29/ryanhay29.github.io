@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* "Last updated" stamp — guarded since not every page has this element */
   const lastUpdatedEl = document.getElementById('lastUpdated');
-  if (lastUpdatedEl) lastUpdatedEl.textContent = 'August 29, 2026'; /* --------------------------- Update this!! */
+  if (lastUpdatedEl) lastUpdatedEl.textContent = 'October 5, 2026'; /* --------------------------- Update this!! */
 
   /* Index page scripts */
   if (document.body.classList.contains('index-page')) {
@@ -126,35 +126,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbs = document.querySelectorAll('.gallery-thumb');
     const initialThumb = document.querySelector('.gallery-thumb.active');
 
-    /* Swap the main media element to match a given thumb (shared by initial load + click) */
-    function displayMedia(thumb) {
-      if (thumb.dataset.type === 'video') {
-        mainImg.style.display = 'none';
-        mainVideo.src = thumb.dataset.src;
-        mainVideo.style.display = 'block';
-      } else {
-        mainVideo.style.display = 'none';
-        mainVideo.src = ''; /* stop video playback when switching away */
-        mainImg.src = thumb.dataset.src;
-        mainImg.style.display = 'block';
+    if (mainImg && mainVideo && caption) {
+      /* Swap the main media element to match a given thumb (shared by initial load + click) */
+      function displayMedia(thumb) {
+        if (thumb.dataset.type === 'video') {
+          mainImg.style.display = 'none';
+          mainVideo.src = thumb.dataset.src;
+          mainVideo.style.display = 'block';
+        } else {
+          mainVideo.style.display = 'none';
+          mainVideo.src = ''; /* stop video playback when switching away */
+          mainImg.src = thumb.dataset.src;
+          mainImg.style.display = 'block';
+        }
+        caption.innerHTML = thumb.dataset.caption;
       }
-      caption.innerHTML = thumb.dataset.caption;
-    }
 
-    if (initialThumb) displayMedia(initialThumb);
+      if (initialThumb) displayMedia(initialThumb);
 
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        if (thumb.classList.contains('active')) return;
-        thumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-        mainImg.classList.add('fade');
-        setTimeout(() => {
-          displayMedia(thumb);
-          mainImg.classList.remove('fade');
-        }, 200);
+      thumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          if (thumb.classList.contains('active')) return;
+          thumbs.forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+          mainImg.classList.add('fade');
+          setTimeout(() => {
+            displayMedia(thumb);
+            mainImg.classList.remove('fade');
+          }, 200);
+        });
       });
-    });
+    }
 
     /* Lightbox — tap main gallery image to expand, pinch/scroll to zoom, drag to pan */
     const lightbox = document.getElementById('lightbox');
@@ -183,10 +185,12 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxClose.classList.add('visible');
     }
 
-    galleryMain.addEventListener('click', () => {
-      if (mainVideo.style.display === 'block') return;
-      openLightbox(mainImg.src);
-    });
+    if (galleryMain && mainImg) {
+      galleryMain.addEventListener('click', () => {
+        if (mainVideo && mainVideo.style.display === 'block') return;
+        openLightbox(mainImg.src);
+      });
+    }
 
     function closeLightbox() {
       lightbox.classList.remove('open');
