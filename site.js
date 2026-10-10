@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* "Last updated" stamp — guarded since not every page has this element */
   const lastUpdatedEl = document.getElementById('lastUpdated');
-  if (lastUpdatedEl) lastUpdatedEl.textContent = 'October 5, 2026'; /* --------------------------- Update this!! */
+  if (lastUpdatedEl) lastUpdatedEl.textContent = 'October 10, 2026'; /* --------------------------- Update this!! */
 
   /* Index page scripts */
   if (document.body.classList.contains('index-page')) {
@@ -119,50 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Project page scripts */
   if (document.body.classList.contains('project-page')) {
-    /* Thumbnail gallery */
-    const mainImg = document.getElementById('galleryMainImg');
-    const mainVideo = document.getElementById('galleryMainVideo');
-    const caption = document.getElementById('galleryCaption');
-    const thumbs = document.querySelectorAll('.gallery-thumb');
-    const initialThumb = document.querySelector('.gallery-thumb.active');
-
-    if (mainImg && mainVideo && caption) {
-      /* Swap the main media element to match a given thumb (shared by initial load + click) */
-      function displayMedia(thumb) {
-        if (thumb.dataset.type === 'video') {
-          mainImg.style.display = 'none';
-          mainVideo.src = thumb.dataset.src;
-          mainVideo.style.display = 'block';
-        } else {
-          mainVideo.style.display = 'none';
-          mainVideo.src = ''; /* stop video playback when switching away */
-          mainImg.src = thumb.dataset.src;
-          mainImg.style.display = 'block';
-        }
-        caption.innerHTML = thumb.dataset.caption;
-      }
-
-      if (initialThumb) displayMedia(initialThumb);
-
-      thumbs.forEach(thumb => {
-        thumb.addEventListener('click', () => {
-          if (thumb.classList.contains('active')) return;
-          thumbs.forEach(t => t.classList.remove('active'));
-          thumb.classList.add('active');
-          mainImg.classList.add('fade');
-          setTimeout(() => {
-            displayMedia(thumb);
-            mainImg.classList.remove('fade');
-          }, 200);
-        });
-      });
-    }
-
-    /* Lightbox — tap main gallery image to expand, pinch/scroll to zoom, drag to pan */
+    /* Lightbox — tap an inline figure to expand, pinch/scroll to zoom, drag to pan */
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
-    const galleryMain = document.querySelector('.gallery-main');
 
     let scale = 1, panX = 0, panY = 0;
     let isDragging = false, dragStartX = 0, dragStartY = 0, panStartX = 0, panStartY = 0;
@@ -171,6 +131,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyTransform(animate) {
       lightboxImg.style.transition = animate ? 'transform 0.2s ease' : 'none';
       lightboxImg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+    }
+
+    /* Change the zoom while keeping the image point under (x, y) in place */
+    function zoomAt(newScale, x, y) {
+      newScale = clamp(newScale, 1, 6);
+      if (newScale === 1) {
+        scale = 1; panX = 0; panY = 0;
+        return;
+      }
+      const rect = lightboxImg.getBoundingClientRect();
+      const dx = x - (rect.left + rect.width / 2);
+      const dy = y - (rect.top + rect.height / 2);
+      const k = newScale / scale;
+      panX += dx * (1 - k);
+      panY += dy * (1 - k);
+      scale = newScale;
     }
 
     function resetTransform(animate) {
@@ -185,12 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxClose.classList.add('visible');
     }
 
-    if (galleryMain && mainImg) {
-      galleryMain.addEventListener('click', () => {
-        if (mainVideo && mainVideo.style.display === 'block') return;
-        openLightbox(mainImg.src);
-      });
-    }
+    /* Inline figures open in the lightbox */
+    document.querySelectorAll('.story-photo img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(img.currentSrc || img.src));
+    });
 
     function closeLightbox() {
       lightbox.classList.remove('open');
@@ -204,12 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Double-tap/click to reset */
     lightboxImg.addEventListener('dblclick', () => resetTransform(true));
 
-    /* Mouse wheel zoom */
+    /* Mouse wheel zoom, centered on the cursor */
     lightbox.addEventListener('wheel', (e) => {
       e.preventDefault();
       const factor = e.deltaY < 0 ? 1.15 : 0.87;
-      scale = clamp(scale * factor, 1, 6);
-      if (scale === 1) { panX = 0; panY = 0; }
+      zoomAt(scale * factor, e.clientX, e.clientY);
       applyTransform(false);
     }, { passive: false });
 
@@ -258,8 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const a = { x: e.touches[0].clientX, y: e.touches[0].clientY };
         const b = { x: e.touches[1].clientX, y: e.touches[1].clientY };
         const dist = Math.hypot(b.x - a.x, b.y - a.y);
-        scale = clamp(pinchStartScale * (dist / pinchStartDist), 1, 6);
-        if (scale === 1) { panX = 0; panY = 0; }
+        /* Pinch zoom, centered between the two fingers */
+        zoomAt(pinchStartScale * (dist / pinchStartDist), (a.x + b.x) / 2, (a.y + b.y) / 2);
         applyTransform(false);
       } else if (e.touches.length === 1 && t1 && scale > 1) {
         panX = panStartX + (e.touches[0].clientX - t1.x);
@@ -271,25 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.addEventListener('touchend', (e) => {
       if (e.touches.length === 0) { t1 = null; t2 = null; }
     }, { passive: false });
-
-    /* Figure references — click to jump to gallery image */
-    const figRefs = document.querySelectorAll('.fig-ref');
-    figRefs.forEach(ref => {
-      ref.addEventListener('click', () => {
-        figRefs.forEach(r => r.classList.remove('active'));
-        ref.classList.add('active');
-        const figNum = ref.dataset.fig;
-        const target = Array.from(thumbs).find(t =>
-          t.dataset.caption.includes(`<b>Fig. ${figNum}.`)
-        );
-        if (target) {
-          target.click();
-          /* Scroll gallery into view — 1.6 s, extra offset to clear nav */
-          const gallery = document.querySelector('.proj-gallery');
-          if (gallery) smoothScrollTo(gallery, 1600, 28);
-        }
-      });
-    });
 
     /* Back button — smooth scroll to the specific project card on return */
     document.getElementById('backBtn').addEventListener('click', function(e) {

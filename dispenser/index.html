@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- dispenser/index.html - Automated Dispenser -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="../site.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+
+  <title>Automated Dispenser</title>
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="preload" href="../images/dispenser/dispenser_with_buttons.webp" as="image">
+</head>
+<body class="project-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../" class="nav-logo">Ryan Hay</a>
+    <ul class="nav-links">
+      <li><a href="../#about"    onclick="sessionStorage.setItem('scrollTo','about')">About</a></li>
+      <li><a href="../#projects" onclick="sessionStorage.setItem('scrollTo','projects')">Projects</a></li>
+      <li><a href="../#contact"  onclick="sessionStorage.setItem('scrollTo','contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Info left, image right -->
+    <div class="proj-header-row">
+      <div class="proj-header-left">
+        <div>
+          <h1 class="proj-title">Automated Dispenser</h1>
+          <p class="proj-tagline">Engineered a food and liquid dispenser to give students with disabilities more independence.</p>
+        </div>
+        <div class="proj-meta">
+          <div><p class="meta-label">Year</p>   <p class="meta-value">Summer 2026</p></div>
+          <div><p class="meta-label">Status</p> <p class="meta-value">Complete</p></div>
+          <div><p class="meta-label">Role</p>   <p class="meta-value">Segal Summer Intern</p></div>
+        </div>
+      </div>
+
+      <div class="proj-hero-side proj-hero-side--full">
+        <img src="../images/dispenser/dispenser_with_buttons.webp" alt="Automated dispenser loaded with cereal and cups, with accessible switches plugged in">
+      </div>
+    </div>
+
+    <!-- Overview, with tools floated right -->
+    <div class="proj-body proj-body--wrap">
+      <!-- Tech & tools (floats right; overview widens below it) -->
+      <div class="proj-aside proj-aside--compact">
+        <div class="sidebar-block">
+          <p class="content-label">Tech &amp; Tools</p>
+          <div class="tag-list">
+            <span class="tag">Onshape</span>
+            <span class="tag">3D Printing</span>
+            <span class="tag">Vacuum Forming</span>
+            <span class="tag">Milling Machine</span>
+            <span class="tag">Lathe</span>
+            <span class="tag">CNC Router</span>
+            <span class="tag">Food-Safe Design</span>
+            <span class="tag">Circuit Design</span>
+            <span class="tag">KiCad</span>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <p class="content-label">Links</p>
+          <div class="proj-links">
+            <a href="https://docs.google.com/document/d/1e3KdyfSlheU-guj1bpg2o3VmhMeaYyxt/edit?usp=sharing&ouid=117167088113942424312&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="proj-link">
+              <svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1.5"/><path d="M4 4h6M4 7h6M4 10h4"/></svg>
+              Instructions for Use
+            </a>
+            <a href="https://cad.onshape.com/documents/14e0df774666fad63d8f4582/w/6e9d46e95e94de04a0df7b41/e/6d336ac5404503755800ee71?renderMode=0&amp;leftPanel=false&amp;uiState=6ac499238b492f17d3b687f0" target="_blank" rel="noopener noreferrer" class="proj-link">
+              <svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L12 2M12 2H5M12 2v7"/></svg>
+              CAD model (Onshape)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-desc">
+        <p class="content-label" style="color: var(--accent); font-size: 0.85rem;">Overview</p>
+
+        <p>
+          During the summer of 2026, I worked as a Segal Summer Intern at Northwestern's Segal Design Institute, where I led the redesign of an automated food and liquid dispenser for Park School.
+        </p>
+        <p>
+          Park School in Evanston, Illinois is a therapeutic day school for students ages 3–22 with a range of disabilities. Part of its program trains students for jobs such as filling containers with dry ingredients. The school's existing switch-activated pourer works, but a teacher has to refill it, swap containers, and reset it after every pour, so students only complete a small part of the task. Students press accessible switches with their hands, wrists, chins, or heads, so the solution needed to work with the school's mono-jack switches.
+        </p>
+        <figure class="story-photo story-photo--float-left" style="clear: none; width: 240px;">
+          <img src="../images/dispenser/original_design.webp" alt="Original prototype" loading="lazy">
+          <figcaption><b>Fig. 1.</b> A photo of the original prototype.</figcaption>
+        </figure>
+        <p>
+          Northwestern's first-year Design Thinking and Communication (DTC) course partnered with Park School and its Transition Coordinator, Jennifer Flaxman. The DTC professors brought two student projects to Segal, and I built on the stronger of the two. It used an auger to feed dry food into cups on a 5-cup turntable, triggered by two switches. See Fig. 1 for the original prototype. The concept was strong, but it was not food safe or reliable enough for daily use. 
+        </p>
+        <p>
+          I began by identifying what needed to change. The turntable only held 5 cups, and its directly driven stepper motor made it jittery and loud. The PLA plate, auger, and funnel were porous, so they could not be washed safely, and cups tipped over easily in the shallow recesses. The auger's stepper motor jammed on rice and had no stall protection. Additionally, the electronics were buried inside the housing, the auger rotations were hard-coded, and the device could not dispense liquids, which the client also wanted.
+        </p>
+        <p style="clear: left;">
+          The final design fills up to 6 cups with dry food or liquid and is triggered by the school's switches, as shown in Fig. 2. Teachers set it up using a built-in control panel. See Fig. 3 and Fig. 4 for photos of the finished dispenser. I designed it in Onshape as three modules (the turntable, the housing, and the top) so each can be serviced on its own (see Fig. 5). I used heat-set inserts and M3 socket-head screws throughout the printed parts so an Allen key can reach tight spots.
+        </p>
+        <div class="photo-grid">
+          <figure class="story-photo">
+            <iframe src="https://www.youtube.com/embed/6i1mTzgGq5g?si=HyTCBiXdeieNQ1oo" title="Filling 6 cups with cereal" allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <figcaption><b>Fig. 2.</b> A video of the dispenser filling 6 cups with cereal.</figcaption>
+          </figure>
+        </div>
+        <div class="photo-grid photo-grid--ratio" style="--cols: 133fr 133fr 77fr;">
+          <figure class="story-photo">
+            <img src="../images/dispenser/dispenser_front_right.webp" alt="Dispenser from the front right" loading="lazy">
+            <figcaption><b>Fig. 3.</b> A photo of the finished dispenser from the front right, with the food and liquid jars on top, the control panel on the side, and the 6-cup turntable in front.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/dispenser_back_left.webp" alt="Dispenser from the back left" loading="lazy">
+            <figcaption><b>Fig. 4.</b> A photo of the dispenser from the back left, showing the liquid-side panel, power port, and spill tray.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/FullExploded.webp" alt="CAD view of the full dispenser" loading="lazy">
+            <figcaption><b>Fig. 5.</b> A CAD view of the full machine, with the turntable pulled away from the dispenser housing and top.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Turntable -->
+        <h3 class="proj-subhead">Turntable</h3>
+        <p>
+          To fix the noise and jitter, I geared the NEMA 17 stepper motor through a 15-tooth to 60-tooth (4:1) helical gear pair, with a pinion driving an internal ring gear in the bottom plate. See Fig. 6 and Fig. 7 for exploded views of the turntable and Fig. 8 for the gearing inside the base. The gear reduction increases torque and reduces the size of each step, and together with a TMC2208 driver, the plate now rotates smoothly and quietly. I screwed the bearing's outer ring to the base through access holes in the bottom plate and sealed it with silicone to prevent leaks. Three rubber feet add traction and lift the base above any spills.
+        </p>
+        <div class="photo-grid photo-grid--ratio" style="--cols: 77fr 77fr 133fr;">
+          <figure class="story-photo">
+            <img src="../images/dispenser/TurntableTop.webp" alt="Exploded CAD view of the turntable from above" loading="lazy">
+            <figcaption><b>Fig. 6.</b> An exploded CAD view of the turntable from above, showing the food-safe tray, printed plates, bearing, and base with the stepper and pinion.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/TurntableBottom.webp" alt="Exploded CAD view of the turntable from below" loading="lazy">
+            <figcaption><b>Fig. 7.</b> An exploded CAD view of the turntable from below, showing the internal ring gear in the bottom plate, the bearing, and the rubber feet.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/inside_lazy_susan.webp" alt="Inside the turntable base" loading="lazy">
+            <figcaption><b>Fig. 8.</b> A photo of the inside of the turntable base, showing the stepper and helical pinion that drive the ring gear.</figcaption>
+          </figure>
+        </div>
+        <p>
+          The plate now holds 6 cups, and each holder fits both 9 oz cups and the school's salt shakers (see Fig. 9). Since printed PLA is not food safe, the cups sit in a clear, vacuum-formed PETG tray that lifts off for washing, shown in Fig. 10. To discourage use without the tray, I made the printed cup holders oversized and slanted so that a bare cup tilts away from the spout and wobbles. I also added a recessed "not food safe" warning and rotation-direction arrows to the plate.
+        </p>
+        <div class="photo-grid photo-grid--2">
+          <figure class="story-photo">
+            <img src="../images/dispenser/lazy_susan_with_foodsafe_cup_tray.webp" alt="Turntable with food-safe cup tray" loading="lazy">
+            <figcaption><b>Fig. 9.</b> A photo of the 6-cup turntable with the food-safe tray installed over the printed plate.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/foodsafe_cup_tray.webp" alt="Vacuum-formed PETG cup tray" loading="lazy">
+            <figcaption><b>Fig. 10.</b> A photo of the removable vacuum-formed PETG cup tray.</figcaption>
+          </figure>
+        </div>
+        <p>
+          Two labeled mono jacks, ROTATE and DISPENSE, connect to the school's accessible switches. See Fig. 11 and Fig. 12 for the switches plugged in and Fig. 13 for a video of the ROTATE switch turning the plate to the next cup. I moved the power jack to the back of the machine so the only ports on the turntable are for the switches. To line the cups up with the spout, I embedded six magnets in the ring gear, one per cup, that pass over a 49E hall-effect sensor. On the first switch press after startup or a stop, the plate turns slowly until it finds a magnet, so the machine always knows where the cups are (see Fig. 14). I also added a second sensor slot as a spare.
+        </p>
+        <div class="photo-grid photo-grid--2">
+          <figure class="story-photo">
+            <img src="../images/dispenser/rotate_button_connected.webp" alt="Accessible switch plugged into the ROTATE jack" loading="lazy">
+            <figcaption><b>Fig. 11.</b> A photo of an accessible switch plugged into the labeled ROTATE jack, which turns the plate by one cup.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/dispense_button_connected.webp" alt="Accessible switch plugged into the DISPENSE jack" loading="lazy">
+            <figcaption><b>Fig. 12.</b> A photo of an accessible switch plugged into the labeled DISPENSE jack on the opposite side, which starts a fill.</figcaption>
+          </figure>
+        </div>
+        <div class="photo-grid photo-grid--2">
+          <figure class="story-photo">
+            <iframe src="https://www.youtube.com/embed/VtCq481O8wk?si=6AWyTFs0vz_tw7Tq" title="Rotate button demo" allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <figcaption><b>Fig. 13.</b> A video of the ROTATE switch turning the plate to the next cup.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <iframe src="https://www.youtube.com/embed/AWoS1wNWa7o?si=eA_BXkP3aSZNGUVL" title="Turntable homing" allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <figcaption><b>Fig. 14.</b> A video of the turntable homing on a magnet.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Dispenser housing -->
+        <h3 class="proj-subhead">Dispenser Housing</h3>
+        <p>
+          I split the housing into a liquid side and an electrical side to keep water and electronics apart. See Fig. 15 and Fig. 16 for exploded views of the housing. Each side has a removable panel held on by two thumbscrews with custom printed knobs. The liquid side holds a 12 V peristaltic pump with tubing that pulls out for washing, and I sealed the edges of the pump with silicone so water cannot reach the electronics (see Fig. 17 and Fig. 18). As a backup, I added a spill tray below the pump that is held in by embedded magnets and pulls out to be emptied, shown in Fig. 19. In my testing, no water ever reached the tray.
+        </p>
+        <div class="photo-grid photo-grid--2 photo-grid--natural">
+          <figure class="story-photo">
+            <img src="../images/dispenser/DispenserTop.webp" alt="Exploded CAD view of the dispenser housing from above" loading="lazy">
+            <figcaption><b>Fig. 15.</b> An exploded CAD view of the dispenser housing from above, showing the control panel, peristaltic pump, and thumbscrew panels.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/DispenserBottom.webp" alt="Exploded CAD view of the dispenser housing from below" loading="lazy">
+            <figcaption><b>Fig. 16.</b> An exploded CAD view of the dispenser housing from below, showing the rubber feet, spill tray, and back of the control panel.</figcaption>
+          </figure>
+        </div>
+        <div class="photo-grid photo-grid--3">
+          <figure class="story-photo">
+            <img src="../images/dispenser/pump_panel_removed.webp" alt="Liquid side with panel removed" loading="lazy">
+            <figcaption><b>Fig. 17.</b> A photo of the liquid side with its panel removed, showing the peristaltic pump.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/pump_opened.webp" alt="Peristaltic pump opened" loading="lazy">
+            <figcaption><b>Fig. 18.</b> A photo of the pump opened so the tubing can be removed for washing.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/removable_spill_tray.webp" alt="Removable spill tray" loading="lazy">
+            <figcaption><b>Fig. 19.</b> A photo of the magnetic spill tray pulled out of the back of the housing.</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          On the electrical side, I designed and hand-soldered the electronics on a perfboard. A 12 V, 3 A adapter feeds the power switch and then a 3 A slow-blow fuse, which handles the surge when the motors start but still blows on a short or a stalled auger. A bulk capacitor steadies the 12 V rail, and a buck converter set to 5.0 V powers the Arduino Nano, LCD, and hall sensor. The Nano sits in female headers and is positioned so a USB cable can be plugged in easily for code updates.
+        </p>
+        <p>
+          The pump and auger motors are each switched by an IRLZ44N logic-level MOSFET with PWM speed control, a 220 Ω gate resistor, and a 10 kΩ pull-down that keeps the motor off during boot. Each motor also has a 1N5822 Schottky flyback diode and a 0.1 µF ceramic capacitor across its terminals to reduce electrical noise. The turntable stepper motor runs on a TMC2208 driver at 1/8 microstepping, with its current limit set to about 0.7 A so it stays cool while holding the plate in place. I connected the motors, switches, and sensors through screw terminals and labeled connectors so parts can be replaced without desoldering. See Fig. 20, Fig. 21, and Fig. 22 for photos of the electrical side and Fig. 23 for the full schematic.
+        </p>
+        <div class="photo-grid photo-grid--3 photo-grid--tall photo-grid--wide-first">
+          <figure class="story-photo">
+            <img src="../images/dispenser/electrical_panel_removed.webp" alt="Electrical side with its panel removed" loading="lazy">
+            <figcaption><b>Fig. 20.</b> A photo of the electrical side with its thumbscrew panel removed.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/electronic_board.webp" alt="Hand-soldered perfboard" loading="lazy">
+            <figcaption><b>Fig. 21.</b> A photo of the hand-soldered perfboard with the Arduino Nano, MOSFETs, stepper driver, and buck converter.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/inside_electrical_panel.webp" alt="Inside the electrical side" loading="lazy">
+            <figcaption><b>Fig. 22.</b> A photo of the inside of the electrical side, showing the board and the labeled cables to the control panel.</figcaption>
+          </figure>
+        </div>
+        <div class="photo-grid">
+          <figure class="story-photo">
+            <img src="../images/dispenser/DispenserSchematic.webp" alt="Electrical schematic of the dispenser drawn in KiCad" loading="lazy">
+            <figcaption><b>Fig. 23.</b> A KiCad schematic of the dispenser's electronics, showing the power input, Arduino Nano, motor drivers, and control panel switches.</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          To manage heat, I added an always-on intake fan that blows directly across the driver and buck converter heat sinks. The fan also creates positive pressure that keeps dust and crumbs out, and it plugs in through a connector so it is easy to replace. Next to the fan is the power port with the DC jack and the on/off switch, which the original design did not have. See Fig. 24 and Fig. 25 for the back of the dispenser and the power port.
+        </p>
+        <div class="photo-grid photo-grid--2">
+          <figure class="story-photo">
+            <img src="../images/dispenser/dispenser_back.webp" alt="Back of the dispenser" loading="lazy">
+            <figcaption><b>Fig. 24.</b> A photo of the back of the dispenser, showing the thumbscrew panels, spill tray, intake fan, and power port.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/power_port_plugged_in.webp" alt="Intake fan and power port" loading="lazy">
+            <figcaption><b>Fig. 25.</b> A photo of the intake fan cover and the power port with its on/off switch.</figcaption>
+          </figure>
+        </div>
+        <p>
+          The control panel was one of the biggest changes from the original design (see Fig. 26, Fig. 27, and Fig. 28). It has a 20×4 LCD and nine multi-color printed buttons on a perfboard: rotations −/+, cups −/+ (1 to 6), previous/next preset, a Liquid/Food mode toggle, Feed, and Stop. The screen shows the preset, mode, cup count, rotations, and status. Teachers can save up to 100 presets for different foods, liquids, or students without touching the code, and the presets are kept when the power is turned off. To set the amount for a preset, a teacher can enter Set mode and hold Feed until the cup looks right (see Fig. 29). The Stop button is wired to a hardware interrupt so it stops every motor instantly.
+        </p>
+        <div class="photo-grid photo-grid--ratio" style="--cols: 133fr 133fr 129fr;">
+          <figure class="story-photo">
+            <img src="../images/dispenser/control_panel_off.webp" alt="Control panel buttons up close" loading="lazy">
+            <figcaption><b>Fig. 26.</b> A photo of the control panel up close, showing the multi-color printed button icons.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/control_panel_on.webp" alt="Control panel with LCD on" loading="lazy">
+            <figcaption><b>Fig. 27.</b> A photo of the control panel with the LCD on, showing the preset, mode, cup count, rotations, and status.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/ControlPanel.webp" alt="Exploded CAD view of the control panel" loading="lazy">
+            <figcaption><b>Fig. 28.</b> An exploded CAD view of the control panel, showing the LCD, button perfboard, printed buttons, and front and back panels.</figcaption>
+          </figure>
+        </div>
+        <div class="photo-grid">
+          <figure class="story-photo">
+            <iframe src="https://www.youtube.com/embed/boeXXEgCQbg?si=vXfnZWiEXjGiIu0H" title="Control panel and Set mode" allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <figcaption><b>Fig. 29.</b> A video demonstrating the control panel and setting a fill amount in Set mode.</figcaption>
+          </figure>
+        </div>
+
+
+        <!-- Food & liquid dispensing -->
+        <h3 class="proj-subhead">Food &amp; Liquid Dispensing</h3>
+        <p>
+          The top screws onto the main housing and holds two 64 oz jars, one for food and one for liquid. See Fig. 30 for an exploded view of the top. I drilled vent holes in the jar lids so the jars do not collapse under vacuum while dispensing.
+        </p>
+        <div class="photo-grid">
+          <figure class="story-photo">
+            <img src="../images/dispenser/Top.webp" alt="Exploded CAD view of the top" loading="lazy">
+            <figcaption><b>Fig. 30.</b> An exploded CAD view of the top, showing the food and liquid jars, funnel, and tube housings.</figcaption>
+          </figure>
+        </div>
+        <p>
+          On the food side, the bottom of the jar is cut out and sits in a funnel, since the client never swaps materials until a jar is empty. Like the turntable, the printed funnel has a vacuum-formed PETG liner, with printed warning symbols underneath in case someone leaves the liner out (see Fig. 31 and Fig. 32). I also coated every printed surface that could touch food, and every cut plastic part, with 2 coats of food-safe epoxy.
+        </p>
+        <div class="photo-grid photo-grid--2">
+          <figure class="story-photo">
+            <img src="../images/dispenser/food_dispenser_without_foodsafe_funnel.webp" alt="Food funnel without food-safe liner" loading="lazy">
+            <figcaption><b>Fig. 31.</b> A photo of the printed food funnel without its liner, showing the warning symbol.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/food_dispenser_with_foodsafe_funnel.webp" alt="Food funnel with food-safe liner" loading="lazy">
+            <figcaption><b>Fig. 32.</b> A photo of the food funnel with the vacuum-formed PETG liner installed.</figcaption>
+          </figure>
+        </div>
+        <p>
+          The most difficult problem was making the auger assembly food safe and easy to clean. See Fig. 33 for an exploded view of the auger assembly and Fig. 34 for the assembly itself. I placed a store-bought auger inside a food-safe polycarbonate tube and cut the intake and outlet holes on a mill with a Forstner bit, using acetal stock to support the tube from the inside (see Fig. 35). I turned acetal end caps on a lathe and cut O-ring grooves so one O-ring grips the tube and the other grips the housing. I then milled a bore into the bearing cap and press-fit a bearing into it, shown in Fig. 36. The auger mount cap was cut on a CNC router, and I milled matching slots into it and an aluminum coupler so the two key together (see Fig. 37 and Fig. 38). Finally, I drilled and tapped the coupler to mount it to a 12 V DC gear motor, which replaced the underpowered stepper motor.
+        </p>
+        <div class="photo-grid photo-grid--2">
+          <figure class="story-photo">
+            <img src="../images/dispenser/AugerAssembly.webp" alt="Exploded CAD view of the auger assembly" loading="lazy">
+            <figcaption><b>Fig. 33.</b> An exploded CAD view of the auger assembly, from the drive-side cap and coupler to the bearing cap.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/auger_assembly.webp" alt="Removable auger assembly" loading="lazy">
+            <figcaption><b>Fig. 34.</b> A photo of the removable auger assembly, which slides out in one piece for washing.</figcaption>
+          </figure>
+        </div>
+        <div class="photo-grid photo-grid--2">
+          <figure class="story-photo">
+            <img src="../images/dispenser/foodsafe_tube.webp" alt="Polycarbonate auger tube" loading="lazy">
+            <figcaption><b>Fig. 35.</b> A photo of the polycarbonate tube with the intake and outlet holes milled with a Forstner bit.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/bearing_cap.webp" alt="Acetal bearing cap with O-rings" loading="lazy">
+            <figcaption><b>Fig. 36.</b> A photo of the lathe-turned acetal bearing cap, with two O-rings and a press-fit bearing.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/auger_cap_hole.webp" alt="Acetal drive-side cap with milled slot" loading="lazy">
+            <figcaption><b>Fig. 37.</b> A photo of the acetal drive-side cap, showing the milled slot that keys into the coupler.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/auger_connector.webp" alt="Aluminum coupler inside the food tube housing" loading="lazy">
+            <figcaption><b>Fig. 38.</b> A photo of the slotted aluminum coupler inside the empty tube housing, which stays on the machine.</figcaption>
+          </figure>
+        </div>
+        <p>
+          The aluminum coupler stays on the machine, while everything else slides out to be washed with soap and water. A twist-on end cap with magnets holds the assembly in place, with the spout just behind it, as shown in Fig. 39. The motor sits in its own housing with a screw-on shell, and its wires pass down into the electrical side (see Fig. 40).
+        </p>
+        <div class="photo-grid photo-grid--2">
+          <figure class="story-photo">
+            <img src="../images/dispenser/dispenser_cap_removed.webp" alt="Twist-on end cap removed" loading="lazy">
+            <figcaption><b>Fig. 39.</b> A photo of the food tube housing with the magnetic twist-on end cap removed.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/motor_housing.webp" alt="Auger motor housing with shell removed" loading="lazy">
+            <figcaption><b>Fig. 40.</b> A photo of the auger's DC gear motor in its housing with the shell removed.</figcaption>
+          </figure>
+        </div>
+        <p>
+          On the liquid side, silicone tubing runs from a bulkhead fitting sealed with silicone in the jar, down through the pump, and back up to a second bulkhead at the spout. The tubing grips tightly without leaking but pulls off easily for washing, and the tube housing has a hinged lid with a magnetic catch for easy access. See Fig. 41, Fig. 42, and Fig. 43 for the liquid jar, tube housing, and tubing, and Fig. 44 for a video of the dispenser filling cups with water.
+        </p>
+        <div class="photo-grid photo-grid--3">
+          <figure class="story-photo">
+            <img src="../images/dispenser/liquid_jar.webp" alt="Liquid jar with bulkhead fitting" loading="lazy">
+            <figcaption><b>Fig. 41.</b> A photo of the liquid jar, showing the siliconed bulkhead fitting that the tubing attaches to.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/liquid_lid_open.webp" alt="Liquid tube housing with lid open" loading="lazy">
+            <figcaption><b>Fig. 42.</b> A photo of the liquid tube housing with its hinged magnetic lid open, showing the tubing routed to the spout.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/dispenser/foodsafe_tubing.webp" alt="Food-safe silicone tubing" loading="lazy">
+            <figcaption><b>Fig. 43.</b> A photo of the food-safe silicone tubing removed for washing.</figcaption>
+          </figure>
+        </div>
+        <div class="photo-grid">
+          <figure class="story-photo">
+            <iframe src="https://www.youtube.com/embed/hWxPBNz_30Q?si=qKvT2rfM3FRxIr2m" title="Filling 3 cups with water" allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <figcaption><b>Fig. 44.</b> A video of the dispenser filling 3 cups with water.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Results -->
+        <h3 class="proj-subhead">Results</h3>
+        <p>
+          The finished dispenser fills up to 6 cups with dry food or liquid from a single switch press. The dispenser is complete and is being handed off to Park School. Rebuilding the prototype around food safety, accessibility, and easy maintenance turned a promising concept into a device the school can use every day.
+        </p>
+      </div>
+
+    </div>
+
+    <a href="../" id="backBtn" class="btn-back" style="margin-top: 2rem;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 7H2M6 3L2 7l4 4"/>
+      </svg>
+      Back to all projects
+    </a>
+
+  </div>
+
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <footer>
+    <p>&copy; Ryan Hay &emsp; Latest Update: <span id="lastUpdated"></span></p>
+  </footer>
+
+</body>
+</html>

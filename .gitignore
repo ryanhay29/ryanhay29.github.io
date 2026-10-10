@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Local Python environment
+.venv/
+
+# Private working notes (not for publishing)
+DispenserPortfolio.txt
+dispenser-page-handoff.md
+
+# Personal resume (contains phone number)
+HayResume.txt

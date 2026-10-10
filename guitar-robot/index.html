@@ -14,7 +14,7 @@
 
   <title>Guitar Robot</title>
   <link rel="icon" type="image/png" href="../images/icon.png">
-  <link rel="preload" href="../images/guitar-robot.webp" as="Guitar Robot hero image">
+  <link rel="preload" href="../images/guitar-robot.webp" as="image">
 </head>
 <body class="project-page">
 
@@ -53,45 +53,11 @@
 
     </div>
 
-    <!-- Overview left, tools right -->
-    <div class="proj-body">
-
-      <div class="proj-desc">
-        <p class="content-label" style="color: var(--accent); font-size: 0.85rem;">Overview</p>
-        <p>
-          In the Northwestern University Robotics Club (NURC), I am the co-lead of the guitar robot on the Robotic Band subteam, overseeing the mechanical design. 
-          I lead weekly meetings, track progress on both the guitar and drum robots, and facilitate communication between the two teams.
-        </p>
-        <p>
-          My primary contribution has been leading the design of the fret-pressing mechanism. After researching different actuation methods, I chose solenoids to 
-          press the strings from frets 1 to 12. Because the solenoids are too large to mount side by side on a single fret, I developed an arc layout for each fret array. 
-          I derived the geometry equations and used MATLAB to calculate the specific dimensions and mounting angles for each solenoid across each string and fret, then modeled the arrays 
-          in Onshape. I 3D printed a prototype of a single array, using a mix of real and printed solenoids, to validate the geometry, shown in <span class="fig-ref" data-fig="1">Fig. 1</span>. To test actuation, I built a 
-          capo-style prototype that clamps onto the guitar neck; see the demo video in <span class="fig-ref" data-fig="2">Fig. 2</span>.
-        </p>
-        <p>
-          With the concept validated, I designed the full mechanism in CAD using aluminum extrusions as a modular frame so the fret arrays can slide on and be repositioned. I carefully 
-          measured the fretboard to ensure accurate spacing between arrays. The full assembly is shown in <span class="fig-ref" data-fig="3">Fig. 3</span>. I also designed angled solenoid tips to match the mounting angle of each 
-          solenoid and optimize string contact, see <span class="fig-ref" data-fig="4">Fig. 4</span>.
-        </p>
-        <p>
-          Next, I laser cut the fret arrays from acrylic. Each array features slotted holes for solenoid mounting, side mounting points, and binary-encoded holes indicating the fret number. 
-          The full DXF layout is shown in <span class="fig-ref" data-fig="5">Fig. 5</span>, and the laser-cut acrylic arrays are pictured in <span class="fig-ref" data-fig="6">Fig. 6</span>. An exploded view of the 12th fret array is shown in <span class="fig-ref" data-fig="7">Fig. 7</span>. After cutting the 
-          aluminum extrusions to length, I assembled the frame with four fret arrays and the available solenoids, and resin-printed the angled tips. The prototype assembly is shown in <span class="fig-ref" data-fig="8">Fig. 8</span>.
-        </p>
-        <p>
-          Alongside the fret-pressing mechanism, I designed a new faceplate, replacing the pickguard, that serves as the shared mounting surface for both the fret-pressing mechanism and the 
-          string-plucking mechanism. The CAD design with fasteners is shown in <span class="fig-ref" data-fig="9">Fig. 9</span>. A first version was laser cut from acrylic to verify that the mounting holes align with the existing 
-          guitar screw holes. The acrylic faceplate with the fret-pressing assembly is shown in <span class="fig-ref" data-fig="10">Fig. 10</span>.
-        </p>
-        <p>
-          Currently, I am refining the fret-pressing mechanism, verifying dimensions against the guitar, and making adjustments to optimize string contact for sound quality. The full CAD drawing with dimensions for 
-          manufacturing is shown in <span class="fig-ref" data-fig="11">Fig. 11</span>.
-        </p>
-      </div>
+    <!-- Overview, with tools floated right -->
+    <div class="proj-body proj-body--wrap">
 
       <!-- Tech & Tools -->
-      <div>
+      <div class="proj-aside">
         <div class="sidebar-block">
           <p class="content-label">Tech &amp; Tools</p>
           <div class="tag-list">
@@ -99,64 +65,102 @@
             <span class="tag">3D Printing</span>
             <span class="tag">SLA Resin Printing</span>
             <span class="tag">Laser Cutting</span>
-            <span class="tag">Horizontal Band Saw</span>
             <span class="tag">MATLAB</span>
           </div>
         </div>
       </div>
 
-    </div>
-
-    <!-- Interactive Gallery -->
-    <div class="proj-gallery">
-      <p class="content-label">Gallery</p>
-
-      <div class="gallery-main" style="position:relative;">
-        <img id="galleryMainImg" src="../images/guitar-robot/arrayprototype.webp" alt="Gallery Main.">
-        <iframe id="galleryMainVideo" src="" title="" allowfullscreen
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          style="display:none; position:absolute; inset:0; width:100%; height:100%; border:none;">
-        </iframe>
-      </div>
-      <p class="media-caption" id="galleryCaption"><b>Fig. 1.</b> A 3D printed prototype of a single fret array, using a mix of real and printed solenoids to validate the geometry and actuation.</p>
-
-      <div class="gallery-thumbs-wrap">
-        <div class="gallery-thumbs">
-          <button class="gallery-thumb active" data-src="../images/guitar-robot/arrayprototype.webp" data-caption="<b>Fig. 1.</b> A 3D printed prototype of a single fret array, using a mix of real and printed solenoids to validate the geometry and actuation.">
-            <img src="../images/guitar-robot/arrayprototype.webp" alt="Photo of 3D printed mockup for a single array of solenoids, using both real solenoids and 3D printed solenoids">
-          </button>
-          <button class="gallery-thumb" data-type="video" data-src="https://www.youtube.com/embed/AM6Tc5tUmXA?si=ubRxMvUeEl4-mQfh" data-caption="<b>Fig. 2.</b> A demo video of the prototype clamped on the guitar neck, showing the solenoids pressing the strings and producing sound.">
-            <img src="../images/guitar-robot/videothumbnailprototype.webp" alt="Video demo of the single array 3D printed prototype on a guitar neck">
-          </button>
-          <button class="gallery-thumb" data-src="../images/guitar-robot/fretpressingmechanismCAD.webp" data-caption="<b>Fig. 3.</b> A CAD view of the fret-pressing mechanism assembly.">
-            <img src="../images/guitar-robot/fretpressingmechanismCAD.webp" alt="CAD view of the fret pressing mechanism">
-          </button>
-          <button class="gallery-thumb" data-src="../images/guitar-robot/tipsCAD.webp" data-caption="<b>Fig. 4.</b> A CAD view of the angled solenoid tips, designed to allow angled mounting while still pressing down on the strings.">
-            <img src="../images/guitar-robot/tipsCAD.webp" alt="CAD view of the tips that attach to the solenoids and press the frets">  
-          </button>
-          <button class="gallery-thumb" data-src="../images/guitar-robot/fretarraysdxf.webp" data-caption="<b>Fig. 5.</b> A screenshot of a laser-cut DXF file for the solenoid arrays, note the binary numbering.">
-            <img src="../images/guitar-robot/fretarraysdxf.webp" alt="Screenshot of a laser-cut DXF file for the solenoid arrays">
-          </button>
-          <button class="gallery-thumb" data-src="../images/guitar-robot/lasercutarrays.webp" data-caption="<b>Fig. 6.</b> A photo of the laser-cut acrylic solenoid arrays.">
-            <img src="../images/guitar-robot/lasercutarrays.webp" alt="Photo of laser-cut acrylic solenoid arrays">
-          </button>
-          <button class="gallery-thumb" data-src="../images/guitar-robot/explodedview.webp" data-caption="<b>Fig. 7.</b> An exploded CAD view of the 12th fret array assembly, showing all components and how they fit together.">
-            <img src="../images/guitar-robot/explodedview.webp" alt="Exploded view CAD drawing of a single solenoid array assembly">
-          </button>
-          <button class="gallery-thumb" data-src="../images/guitar-robot/assembledupperandlower.webp" data-caption="<b>Fig. 8.</b> A photo of the fret-pressing mechanism assembled with both upper and lower extrusions and four solenoid arrays installed.">
-            <img src="../images/guitar-robot/assembledupperandlower.webp" alt="Photo of the full fret-pressing mechanism assembly with both upper and lower extrusions and 4 solenoid arrays installed">
-          </button>
-          <button class="gallery-thumb" data-src="../images/guitar-robot/faceplateCAD.webp" data-caption="<b>Fig. 9.</b> A CAD view of the modified faceplate designed to mount both the fret-pressing and string-plucking mechanisms, showing the mounting holes and fasteners.">
-            <img src="../images/guitar-robot/faceplateCAD.webp" alt="CAD view of the modified faceplate">
-          </button>
-          <button class="gallery-thumb" data-src="../images/guitar-robot.webp" data-caption="<b>Fig. 10.</b> A photo of the laser-cut acrylic faceplate laid out with the fret-pressing mechanism on the guitar body.">
-            <img src="../images/guitar-robot.webp" alt="Photo of the fret mechanism and guitar faceplate assemblies layed out on guitar body">
-          </button>
-          <button class="gallery-thumb" data-src="../images/guitar-robot/FinalCADdrawing.webp" data-caption="<b>Fig. 11.</b> A CAD drawing of the full assembly with all components and fasteners.">
-            <img src="../images/guitar-robot/FinalCADdrawing.webp" alt="Screenshot of the final CAD drawing with all components and dimensions for manufacturing the full assembly">
-          </button>
+      <div class="proj-desc">
+        <p class="content-label" style="color: var(--accent); font-size: 0.85rem;">Overview</p>
+        <p>
+          In the Northwestern University Robotics Club (NURC), I am the co-lead of the guitar robot on the Robotic Band subteam, overseeing the mechanical design. 
+          I lead weekly meetings, track progress on both the guitar and drum robots, and facilitate communication between the two teams. Our goal is a robot that plays the guitar by itself, with solenoids pressing the frets and a separate mechanism plucking the strings. The robot is still in progress; see Fig. 1 for an early prototype pressing the strings and producing sound.
+        </p>
+        <div class="photo-grid photo-grid--clear">
+          <figure class="story-photo">
+            <iframe src="https://www.youtube.com/embed/AM6Tc5tUmXA?si=ubRxMvUeEl4-mQfh" title="Video demo of the single array 3D printed prototype on a guitar neck" allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <figcaption><b>Fig. 1.</b> A demo video of the prototype clamped on the guitar neck, showing the solenoids pressing the strings and producing sound.</figcaption>
+          </figure>
+        </div>
+        <figure class="story-photo story-photo--float-left story-photo--landscape">
+          <img src="../images/guitar-robot/arrayprototype.webp" alt="Photo of 3D printed mockup for a single array of solenoids, using both real solenoids and 3D printed solenoids" loading="lazy">
+          <figcaption><b>Fig. 2.</b> A 3D printed prototype of a single fret array, using a mix of real and printed solenoids to validate the geometry and actuation.</figcaption>
+        </figure>
+        <p>
+          My primary contribution has been leading the design of the fret-pressing mechanism. After researching different actuation methods, I chose solenoids to 
+          press the strings from frets 1 to 12. Because the solenoids are too large to mount side by side on a single fret, I developed an arc layout for each fret array. 
+          I derived the geometry equations and used MATLAB to calculate the specific dimensions and mounting angles for each solenoid across each string and fret, then modeled the arrays 
+          in Onshape. I 3D printed a prototype of a single array, using a mix of real and printed solenoids, to validate the geometry, shown in Fig. 2. To test actuation, I built a 
+          capo-style prototype that clamps onto the guitar neck, shown in action in Fig. 1.
+        </p>
+        <p>
+          With the concept validated, I designed the full mechanism in CAD using aluminum extrusions as a modular frame so the fret arrays can slide on and be repositioned. I carefully 
+          measured the fretboard to ensure accurate spacing between arrays. The full assembly is shown in Fig. 3. I also designed angled solenoid tips to match the mounting angle of each 
+          solenoid and optimize string contact, see Fig. 4.
+        </p>
+        <div class="photo-grid photo-grid--ratio" style="--cols: 202fr 173fr;">
+          <figure class="story-photo">
+            <img src="../images/guitar-robot/fretpressingmechanismCAD.webp" alt="CAD view of the fret pressing mechanism" loading="lazy">
+            <figcaption><b>Fig. 3.</b> A CAD view of the fret-pressing mechanism assembly.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/guitar-robot/tipsCAD.webp" alt="CAD view of the tips that attach to the solenoids and press the frets" loading="lazy">
+            <figcaption><b>Fig. 4.</b> A CAD view of the angled solenoid tips, designed to allow angled mounting while still pressing down on the strings.</figcaption>
+          </figure>
+        </div>
+        <p>
+          Next, I laser cut the fret arrays from acrylic. Each array features slotted holes for solenoid mounting, side mounting points, and binary-encoded holes indicating the fret number. 
+          The full DXF layout is shown in Fig. 5, and an exploded view of the 12th fret array is shown in Fig. 6. The laser-cut acrylic arrays are pictured in Fig. 7. After cutting the 
+          aluminum extrusions to length, I assembled the frame with four fret arrays and the available solenoids, and resin-printed the angled tips. The prototype assembly is shown in Fig. 8.
+        </p>
+        <div class="photo-grid photo-grid--ratio" style="--cols: 155fr 129fr;">
+          <figure class="story-photo">
+            <img src="../images/guitar-robot/fretarraysdxf.webp" alt="Screenshot of a laser-cut DXF file for the solenoid arrays" loading="lazy">
+            <figcaption><b>Fig. 5.</b> A screenshot of a laser-cut DXF file for the solenoid arrays, note the binary numbering.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/guitar-robot/explodedview.webp" alt="Exploded view CAD drawing of a single solenoid array assembly" loading="lazy">
+            <figcaption><b>Fig. 6.</b> An exploded CAD view of the 12th fret array assembly, showing all components and how they fit together.</figcaption>
+          </figure>
+        </div>
+        <div class="photo-grid photo-grid--ratio" style="--cols: 75fr 133fr;">
+          <figure class="story-photo">
+            <img src="../images/guitar-robot/lasercutarrays.webp" alt="Photo of laser-cut acrylic solenoid arrays" loading="lazy">
+            <figcaption><b>Fig. 7.</b> A photo of the laser-cut acrylic solenoid arrays.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/guitar-robot/assembledupperandlower.webp" alt="Photo of the full fret-pressing mechanism assembly with both upper and lower extrusions and 4 solenoid arrays installed" loading="lazy">
+            <figcaption><b>Fig. 8.</b> A photo of the fret-pressing mechanism assembled with both upper and lower extrusions and four solenoid arrays installed.</figcaption>
+          </figure>
+        </div>
+        <p>
+          Alongside the fret-pressing mechanism, I designed a new faceplate, replacing the pickguard, that serves as the shared mounting surface for both the fret-pressing mechanism and the 
+          string-plucking mechanism. The CAD design with fasteners is shown in Fig. 9. A first version was laser cut from acrylic to verify that the mounting holes align with the existing 
+          guitar screw holes. The acrylic faceplate with the fret-pressing assembly is shown in Fig. 10.
+        </p>
+        <div class="photo-grid">
+          <figure class="story-photo">
+            <img src="../images/guitar-robot/faceplateCAD.webp" alt="CAD view of the modified faceplate" loading="lazy">
+            <figcaption><b>Fig. 9.</b> A CAD view of the modified faceplate designed to mount both the fret-pressing and string-plucking mechanisms, showing the mounting holes and fasteners.</figcaption>
+          </figure>
+        </div>
+        <p>
+          Currently, I am refining the fret-pressing mechanism, verifying dimensions against the guitar, and making adjustments to optimize string contact for sound quality. The full CAD drawing with dimensions for 
+          manufacturing is shown in Fig. 11.
+        </p>
+        <div class="photo-grid photo-grid--ratio" style="--cols: 133fr 71fr;">
+          <figure class="story-photo">
+            <img src="../images/guitar-robot.webp" alt="Photo of the fret mechanism and guitar faceplate assemblies laid out on the guitar body" loading="lazy">
+            <figcaption><b>Fig. 10.</b> A photo of the laser-cut acrylic faceplate laid out with the fret-pressing mechanism on the guitar body.</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="../images/guitar-robot/FinalCADdrawing.webp" alt="Screenshot of the final CAD drawing with all components and dimensions for manufacturing the full assembly" loading="lazy">
+            <figcaption><b>Fig. 11.</b> A CAD drawing of the full assembly with all components and fasteners.</figcaption>
+          </figure>
         </div>
       </div>
+
     </div>
 
     <!-- Back button -->
