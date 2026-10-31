@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Back button — smooth scroll to the specific project card on return */
     document.getElementById('backBtn').addEventListener('click', function(e) {
       e.preventDefault();
-      /* Get the folder name (e.g. "driftwood-pillow") from a URL like /driftwood-pillow/ */
+      /* Get the folder name (e.g. "billow") from a URL like /billow/ */
       const parts = window.location.pathname.replace(/\/$/, '').split('/');
       const folderName = parts[parts.length - 1];
       sessionStorage.setItem('scrollTo', 'projects');
