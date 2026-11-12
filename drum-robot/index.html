@@ -37,7 +37,7 @@
       <div class="proj-header-left">
         <div>
           <h1 class="proj-title">Drum Robot</h1>
-          <p class="proj-tagline">Integrated actuators and control systems for robotic drumming.</p>
+          <p class="proj-tagline">Integrated actuators and electrical systems for robotic drumming.</p>
         </div>
         <div class="proj-meta">
           <div><p class="meta-label">Year</p>   <p class="meta-value">2024 – 2026</p></div>
@@ -61,7 +61,7 @@
         <div class="sidebar-block">
           <p class="content-label">Tech &amp; Tools</p>
           <div class="tag-list">
-            <span class="tag">KiCAD</span>
+            <span class="tag">KiCad</span>
             <span class="tag">Raspberry Pi</span>
             <span class="tag">Teensy 4.1</span>
             <span class="tag">Motor Control</span>
@@ -87,7 +87,7 @@
           The robot uses 6 servo motors to swing drumsticks, 3 stepper motors for torso movement, and a solenoid for the kick drum. The servo motors connect directly to the microcontroller, while each stepper 
           motor is driven by a dedicated motor driver connected to the power supply and microcontroller. The solenoid was originally switched via a relay. When setting up the electronics, I designed the servo 
           wiring to be modular so bad servos could be swapped out easily. The initial setup used an Arduino Uno and Arduino Mega, shown in Fig. 2 and the demo video in Fig. 3. We later migrated to a Teensy 4.1 
-          (for its native MIDI support and numerous pins) and replaced the relay with a transistor for more reliable kick drum actuation. I rewired the robot accordingly and designed an updated schematic in KiCAD, shown in Fig. 4.
+          (for its native MIDI support and numerous pins) and replaced the relay with a transistor for more reliable kick drum actuation. I rewired the robot accordingly and designed an updated schematic in KiCad, shown in Fig. 4.
         </p>
         <div class="photo-grid photo-grid--photo-video">
           <figure class="story-photo">
@@ -108,7 +108,7 @@
         <div class="photo-grid photo-grid--ratio" style="--cols: 71fr 75fr 75fr;">
           <figure class="story-photo">
             <img src="../images/drum-robot/schematics.webp" alt="Schematic of the drum robot's electrical circuit" loading="lazy">
-            <figcaption><b>Fig. 4.</b> A schematic of the drum robot's electrical circuit designed in KiCAD, showing the connections between all components.</figcaption>
+            <figcaption><b>Fig. 4.</b> A schematic of the drum robot's electrical circuit designed in KiCad, showing the connections between all components.</figcaption>
           </figure>
           <figure class="story-photo">
             <img src="../images/drum-robot/drumrobottorso.webp" alt="Photo of the drum robot's torso" loading="lazy">
